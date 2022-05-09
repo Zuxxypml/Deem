@@ -1,0 +1,12 @@
+/* Global Syles  */
+:root {
+  --main-bg-color: #13192f;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Epilogue", sans-serif;
+  box-sizing: border-box;
+}
+/* End of Global Styles  */
