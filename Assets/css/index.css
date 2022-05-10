@@ -15,7 +15,29 @@
   --crypto-value-color: #23a78e;
   --secondary-bg: #190d67;
 }
-
+.navbar-toggler,
+.btn,
+textarea:hover,
+input:hover,
+textarea:active,
+input:active,
+textarea:focus,
+input:focus,
+button:focus,
+button:active,
+button:hover,
+label:focus,
+.btn:active,
+.btn.active {
+  outline: 0px !important;
+  -webkit-appearance: none;
+  box-shadow: none !important;
+}
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 @-webkit-keyframes upDown {
   0% {
     -webkit-transform: translateY(-45px);
@@ -81,6 +103,7 @@
 .navbar {
   background-color: var(--main-bg-color);
   height: 90px;
+  z-index: 2;
 }
 .navbar .container-fluid {
   padding: 0 5% !important;
@@ -93,8 +116,20 @@
   font-size: 3rem;
   font-weight: 600;
 }
+.collapse,
+.navbar-collapse {
+  width: 100% !important;
+  text-align: center;
+  background-color: var(--main-bg-color) !important;
+}
 .navbar-nav {
   gap: 20px;
+}
+.navbar-toggler-icon {
+  height: 100%;
+  width: 100%;
+  color: var(--brand-color);
+  font-size: 2rem;
 }
 .nav-link {
   color: var(--Almost-white);
@@ -113,7 +148,7 @@
 
 /* Showcase  */
 .showcase {
-  padding: 3% 0;
+  padding: 5% 0;
   background-color: var(--main-bg-color);
   color: var(--Almost-white);
 }
@@ -135,7 +170,7 @@
 
 /* Features  */
 .features {
-  padding: 5% 0;
+  padding: 8% 0;
   text-align: center;
 }
 .feature-icon {
@@ -155,7 +190,7 @@
 
 /* Live Rate Section  */
 .live-rate {
-  padding: 5% 0;
+  padding: 7% 0;
   background-color: var(--main-bg-color);
   text-align: center;
 }
@@ -204,7 +239,7 @@
 /* Brand ad One  */
 .brand-ad {
   background-color: var(--Almost-white);
-  padding: 5% 0;
+  padding: 8% 0;
   color: var(--main-bg-color);
 }
 .brand-ad .ad {
@@ -232,11 +267,42 @@
   background-color: #da4c21;
   color: var(--Almost-white);
 }
+
+/* 2 */
+.brand-ad-2 {
+  background-color: var(--main-bg-color);
+  padding: 8% 0;
+  color: var(--Almost-white);
+}
+.brand-ad-2 h1 {
+  margin-bottom: 40px;
+}
+.brand-ad-2-ul {
+  list-style: none;
+}
+.brand-ad-2-li {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.brand-ad-2-li:last-child {
+  margin-bottom: 30px;
+}
 /* Testimonials  */
 
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/
+
+.testimonials {
+  padding: 5% 0;
+  background-color: #ebd0ee;
+}
+.testimonials .section-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
 .testimonials .testimonials-carousel,
 .testimonials .testimonials-slider {
   overflow: hidden;
@@ -258,16 +324,16 @@
   font-size: 18px;
   font-weight: bold;
   margin: 10px 0 5px 45px;
-  color: #2c4964;
+  color: var(--main-bg-color);
 }
 .testimonials .testimonial-item h4 {
   font-size: 14px;
-  color: #999;
+  color: var(--crypto-name-color);
   margin: 0 0 0 45px;
 }
 .testimonials .testimonial-item .quote-icon-left,
 .testimonials .testimonial-item .quote-icon-right {
-  color: #b1a9fc;
+  color: var(--main-bg-color);
   font-size: 26px;
 }
 .testimonials .testimonial-item .quote-icon-left {
@@ -299,25 +365,18 @@
 .testimonials .swiper-pagination .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
-  background-color: #fff;
+  background-color: var(--main-bg-color);
+  margin-top: 10px;
   opacity: 1;
-  border: 1px solid #5846f9;
+  /* border: 1px solid var(--main-bg-color); */
 }
 .testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #5846f9;
-}
-@media (max-width: 767px) {
-  .testimonials {
-    margin: 30px 10px;
-  }
+  background-color: var(--crypto-name-color);
 }
 
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
-#footer {
-  color: #fff;
-  font-size: 14px;
+/* Download Section  */
+.download-app-section {
+  padding: 5% 0;
   background: linear-gradient(
       45deg,
       rgba(86, 58, 250, 0.9) 0%,
@@ -325,6 +384,25 @@
     ),
     url("../img/hero-bg.jpg") center center no-repeat;
   background-size: cover;
+  color: var(--Almost-white);
+}
+.download-app-section .btns {
+  display: flex;
+  gap: 15px;
+}
+.download-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  color: #fff;
+  font-size: 14px;
+  background-color: var(--main-bg-color);
 }
 #footer .footer-top {
   padding: 60px 0 30px 0;
@@ -339,7 +417,6 @@
   padding: 2px 0 2px 0;
   line-height: 1;
   font-weight: 500;
-  text-transform: uppercase;
 }
 #footer .footer-top .footer-contact p {
   font-size: 14px;
@@ -455,4 +532,84 @@
   background: rgba(255, 255, 255, 0.2);
   color: #fff;
   text-decoration: none;
+}
+
+/* Media Queries  */
+/*Big smartphones [426px -> 600px]*/
+
+@media only screen and (max-width: 768px) {
+  .showcase {
+    padding: 150px 0;
+    background-color: var(--main-bg-color);
+    color: var(--Almost-white);
+  }
+  .showcase-text {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+  }
+  .features {
+    padding: 50px 0;
+  }
+  .live-rate {
+    padding: 50px 0;
+  }
+  .brand-ad {
+    padding: 50px 0;
+    text-align: center;
+  }
+  .brand-ad .ad {
+    align-items: center;
+    justify-content: stretch;
+  }
+  .brand-ad-2 {
+    padding: 50px 0;
+    text-align: center;
+  }
+  .brand-ad-2-li {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: start;
+    margin-bottom: 15px;
+  }
+  .testimonials {
+    padding: 50px 0;
+    background-color: #ebd0ee;
+  }
+  .download-app-section {
+    padding: 50px 0;
+    text-align: center;
+  }
+  .download-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: stretch;
+    align-items: center;
+  }
+  .download-app-section .row {
+    gap: 50px;
+  }
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media only screen and (max-width: 480px) {
+  .showcase {
+    padding: 50px 0;
+    background-color: var(--main-bg-color);
+    color: var(--Almost-white);
+  }
+  .showcase-text {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .brand-ad-title {
+    margin-bottom: 30px;
+    font-size: 2rem;
+  }
 }
