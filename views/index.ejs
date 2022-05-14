@@ -11,6 +11,9 @@
       href="https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap"
       rel="stylesheet"
     />
+    <!-- =========================================================  -->
+    <link rel="icon" type="image/png" href="Assets/img/icons/favicon.ico" />
+
     <!-- jQuery CDN  -->
     <!-- jQuery library (served from Google) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
@@ -57,7 +60,7 @@
     <!-- Navbar  -->
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">deem.</a>
+        <a class="navbar-brand" href="/">deem.</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -71,29 +74,31 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mx-auto mb-2">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link nav-active" aria-current="page" href="/"
+                >Home</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <a class="nav-link" href="/about">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Rates</a>
+              <a class="nav-link" href="/rates">Rates</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Blog</a>
+              <a class="nav-link" href="/blog">Blog</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">FAQ</a>
+              <a class="nav-link" href="/faq">FAQ</a>
             </li>
           </ul>
           <ul
             class="navbar-nav mb-2 mb-md-0 d-flex align-items-center justify-content-center"
           >
             <li class="nav-item">
-              <a href="/login.html" class="nav-link">Sign in</a>
+              <a href="/login" class="nav-link">Sign in</a>
             </li>
             <li class="nav-link">
-              <a href="#" class="btn btn-btn">Sign up</a>
+              <a href="/register" class="btn btn-btn">Sign up</a>
             </li>
           </ul>
         </div>
@@ -183,7 +188,7 @@
     </div>
     <!-- Features Section  -->
     <section class="features">
-      <div class="container-fluid">
+      <div class="container-fluid" data-aos="fade-up">
         <div class="row g-5">
           <div class="col-md-4 mb-3">
             <div class="feature-icon">
@@ -220,7 +225,7 @@
     </section>
     <!-- Live-rate  -->
     <section class="live-rate">
-      <div class="container-fluid">
+      <div class="container-fluid" data-aos="fade-up">
         <h1 class="exchange-rate-title">Live Exchange Rate</h1>
         <div class="owl-carousel owl-theme owl-loaded owl-height">
           <div class="owl-stage-outer">
@@ -236,7 +241,7 @@
                   </div>
                   <div class="crypto-value">
                     <div class="crypto-rate">560/$</div>
-                    <div class="crypto-value">$34,567</div>
+                    <div class="crypto-value">$<%=btcvalue%></div>
                   </div>
                 </div>
               </div>
@@ -251,7 +256,51 @@
                   </div>
                   <div class="crypto-value">
                     <div class="crypto-rate">520/$</div>
-                    <div class="crypto-value">$34,567</div>
+                    <div class="crypto-value">$<%=ethvalue%></div>
+                  </div>
+                </div>
+              </div>
+              <div class="owl-item">
+                <div class="crypto-icon">
+                  <i>
+                    <svg
+                      id="Layer_1"
+                      class="img-fluid w-25"
+                      data-name="Layer 1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 511.97 511.97"
+                    >
+                      <defs>
+                        <style>
+                          .bnb {
+                            fill: #f3ba2f;
+                          }
+                        </style>
+                      </defs>
+                      <title>binance-coin-bnb</title>
+                      <g id="Layer_2" data-name="Layer 2">
+                        <g id="Layer_1-2" data-name="Layer 1-2">
+                          <path
+                            class="bnb"
+                            d="M156.56,215.14,256,115.71l99.47,99.47,57.86-57.85L256,0,98.71,157.28l57.85,57.85M0,256l57.86-57.87L115.71,256,57.85,313.83Zm156.56,40.85L256,396.27l99.47-99.47,57.89,57.82,0,0L256,512,98.71,354.7l-.08-.09,57.93-57.77M396.27,256l57.85-57.85L512,256l-57.85,57.85Z"
+                          />
+                          <path
+                            class="bnb"
+                            d="M314.66,256h0L256,197.25,212.6,240.63h0l-5,5L197.33,255.9l-.08.08.08.08L256,314.72l58.7-58.7,0,0-.05,0"
+                          />
+                        </g>
+                      </g>
+                    </svg>
+                  </i>
+                </div>
+                <div class="crypto-info">
+                  <div class="crypto-name">
+                    <div class="crypto-name">Binance BNB</div>
+                    <div class="crypto-live-value">Live&nbsp;Value($)</div>
+                  </div>
+                  <div class="crypto-value">
+                    <div class="crypto-rate">520/$</div>
+                    <div class="crypto-value">$<%=bnbvalue%></div>
                   </div>
                 </div>
               </div>
@@ -266,7 +315,7 @@
                   </div>
                   <div class="crypto-value">
                     <div class="crypto-rate">565/$</div>
-                    <div class="crypto-value">$263</div>
+                    <div class="crypto-value">$<%=ltcvalue%></div>
                   </div>
                 </div>
               </div>
@@ -277,7 +326,7 @@
     </section>
     <!-- First brand Ad  -->
     <section class="brand-ad">
-      <div class="container-fluid">
+      <div class="container-fluid" data-aos="fade-up">
         <div class="row g-5">
           <div class="col-md-6 ad">
             <h1 class="brand-ad-title">
@@ -291,7 +340,7 @@
             </p>
             <div class="btns g-5">
               <a href="/register" class="btn btn-btn">Register</a>
-              <a href="#" class="btn btn-dark">Login</a>
+              <a href="/login" class="btn btn-dark">Login</a>
             </div>
           </div>
           <div class="col-md-6 d-flex justify-content-center brand-ad-img">
@@ -306,7 +355,7 @@
     </section>
     <!-- Second Brand Ad  -->
     <section class="brand-ad-2">
-      <div class="container-fluid">
+      <div class="container-fluid" data-aos="fade-up">
         <div class="row g-5">
           <div class="col-md-6">
             <h1><span class="navbar-brand"> deem. </span> Crypto Exchange</h1>
@@ -357,11 +406,7 @@
           </p>
         </div>
 
-        <div
-          class="testimonials-slider swiper"
-          data-aos="fade-up"
-          data-aos-delay="100"
-        >
+        <div class="testimonials-slider swiper" data-aos="fade-up">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <div class="testimonial-item">
@@ -472,7 +517,7 @@
     <!-- End Testimonials Section -->
     <!-- Download app section  -->
     <section class="download-app-section">
-      <div class="container-fluid">
+      <div class="container-fluid" data-aos="fade-up">
         <div class="row">
           <div class="col-md-6 download-text">
             <h1>Download the <span class="navbar-brand">deem.</span>App</h1>
@@ -501,7 +546,7 @@
     <!-- ======= Footer ======= -->
     <footer id="footer">
       <div class="footer-top">
-        <div class="container">
+        <div class="container-fluid" data-aos="fade-up">
           <div class="row">
             <div class="col-lg-3 col-md-6 footer-contact">
               <h3 class="navbar-brand">deem.</h3>
@@ -518,21 +563,21 @@
               <h4>Services</h4>
               <ul>
                 <li>
-                  <i class="bx bx-chevron-right"></i> <a href="#">Blog</a>
+                  <i class="bx bx-chevron-right"></i> <a href="/blog">Blog</a>
                 </li>
                 <li>
-                  <i class="bx bx-chevron-right"></i> <a href="#">About</a>
+                  <i class="bx bx-chevron-right"></i> <a href="/about">About</a>
                 </li>
                 <li>
-                  <i class="bx bx-chevron-right"></i> <a href="#">Rates</a>
-                </li>
-                <li>
-                  <i class="bx bx-chevron-right"></i>
-                  <a href="#">Terms of service</a>
+                  <i class="bx bx-chevron-right"></i> <a href="/rate">Rates</a>
                 </li>
                 <li>
                   <i class="bx bx-chevron-right"></i>
-                  <a href="#">Privacy policy</a>
+                  <a href="/termofservice">Terms of service</a>
+                </li>
+                <li>
+                  <i class="bx bx-chevron-right"></i>
+                  <a href="/privacypolicy">Privacy policy</a>
                 </li>
               </ul>
             </div>
@@ -578,7 +623,7 @@
         </div>
       </div>
 
-      <div class="container">
+      <div class="container-fluid">
         <div class="copyright-wrap d-md-flex py-4">
           <div class="me-md-auto text-center text-md-start">
             <div class="copyright">
@@ -602,6 +647,7 @@
       </div>
     </footer>
     <!-- End Footer -->
+    <div id="preloader" class="preloader"></div>
   </body>
   <!-- JS  -->
   <!-- Font Awesome  -->
@@ -633,7 +679,7 @@
   <!-- Aos JS  -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <!-- Core Js  -->
-  <script src="/Assets/js/index.js"></script>
+  <script src="/Assets/js/about.js"></script>
   <script>
     var owl = $(".owl-carousel");
     owl.owlCarousel({
