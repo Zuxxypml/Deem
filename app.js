@@ -152,11 +152,15 @@ app
       });
     })(req, res, next);
   });
-
+// Logout
+app.route("/logout").get((req, res) => {
+  req.logOut();
+  res.redirect("/login");
+});
 // Homepage Handler
 app.route("/deem-home").get((req, res) => {
   if (req.isAuthenticated()) {
-    res.render("deem-home");
+    res.render("deem-dashboard");
   } else {
     res.redirect("/login");
   }
