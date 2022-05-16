@@ -113,7 +113,7 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-md-6 rate-text">
-            <h1>Calculate your crypto to Naira rate</h1>
+            <h1>Calculate your Bitcoin to Naira rate</h1>
             <p>
               You can also calculate how much you'll get selling ethereum,
               bitcoin cash, litecoin and USDC on this page.
@@ -130,7 +130,292 @@
         </div>
       </div>
     </section>
+    <section class="converter-section">
+      <div class="container-fluid">
+        <div class="row g-5">
+          <div class="col-md-3 dark">
+            <h3>BTC</h3>
+            <form action="/rates" method="POST" class="buysell-form">
+              <div class="buysell-field form-group">
+                <div class="form-label-group">
+                  <label class="form-label"
+                    >You Want To Sell How Much ($):</label
+                  >
+                </div>
+                <input
+                  type="number"
+                  class="form-control form-control-lg form-control-number"
+                  value=""
+                  name="amountselling"
+                  id="quantity"
+                  onkeyup="checkBTC()"
+                  step="any"
+                  required
+                />
+                <div class="buysell-field form-group">
+                  <div class="form-control-group"></div>
+                </div>
+              </div>
 
+              <div class="buysell-field form-group">
+                <div class="form-label-group">
+                  <label class="form-label" for="buysell-amount"
+                    >Value in BTC:</label
+                  >
+                </div>
+                <div class="form-control-group">
+                  <input
+                    class="input-bordered"
+                    type="hidden"
+                    value="<%=btcvalue%>"
+                    name="btcrate"
+                    id="mainbtcRate"
+                    required
+                  />
+                  <input
+                    type="number"
+                    class="form-control form-control-lg form-control-number"
+                    value=""
+                    name="dividerate"
+                    id="divide_amount"
+                    readonly
+                    disabled
+                  />
+                </div>
+              </div>
+              <!-- .buysell-field -->
+
+              <div class="buysell-field form-group">
+                <div class="form-label-group">
+                  <label class="form-label" for="buysell-amount"
+                    >Rate (We Buy At):</label
+                  >
+                </div>
+                <div class="form-control-group">
+                  <input
+                    disabled
+                    class="form-control form-control-lg form-control-number"
+                    type="text"
+                    value="570"
+                    name="pricerate"
+                    id="price"
+                    readonly
+                  />
+                </div>
+              </div>
+              <!-- .buysell-field -->
+
+              <div class="buysell-field form-group">
+                <div class="form-label-group">
+                  <label class="form-label" for="buysell-amount"
+                    >So You Get The Naira(?) Value Of:</label
+                  >
+                </div>
+                <div class="form-control-group">
+                  <input
+                    class="form-control form-control-lg form-control-number changeborder"
+                    type="text"
+                    value=""
+                    id="show_amount"
+                    readonly
+                    style="
+                      font-family: 'Roboto', Arial, Helvetica, sans-serif;
+                      font-size: 2em;
+                    "
+                  />
+                </div>
+              </div>
+              <!-- .buysell-field -->
+            </form>
+          </div>
+
+          <!-- Eth  -->
+          <div class="col-md-3 light">
+            <form action="/rates" method="POST" class="buysell-form">
+              <h3>ETH</h3>
+              <div class="buysell-field form-group">
+                <div class="form-label-group">
+                  <label class="form-label"
+                    >You Want To Sell How Much ($):</label
+                  >
+                </div>
+                <input
+                  type="number"
+                  class="form-control form-control-lg form-control-number"
+                  value=""
+                  name="amountselling"
+                  id="quantity2"
+                  onkeyup="checkETH()"
+                  step="any"
+                  required
+                />
+                <div class="buysell-field form-group">
+                  <div class="form-control-group"></div>
+                </div>
+              </div>
+
+              <div class="buysell-field form-group">
+                <div class="form-label-group">
+                  <label class="form-label" for="buysell-amount"
+                    >Value in ETH:</label
+                  >
+                </div>
+                <div class="form-control-group">
+                  <input
+                    class="input-bordered"
+                    type="hidden"
+                    value="<%=ethvalue%>"
+                    name="ethrate"
+                    id="ethRate"
+                    required
+                  />
+                  <input
+                    type="number"
+                    class="form-control form-control-lg form-control-number"
+                    value=""
+                    name="dividerate"
+                    id="divide_amountEth"
+                    readonly
+                    disabled
+                  />
+                </div>
+              </div>
+              <!-- .buysell-field -->
+
+              <div class="buysell-field form-group">
+                <div class="form-label-group">
+                  <label class="form-label" for="buysell-amount"
+                    >Rate (We Buy At):</label
+                  >
+                </div>
+                <div class="form-control-group">
+                  <input
+                    disabled
+                    class="form-control form-control-lg form-control-number"
+                    type="text"
+                    value="550"
+                    name="pricerate"
+                    id="priceEth"
+                    readonly
+                  />
+                </div>
+              </div>
+              <!-- .buysell-field -->
+
+              <div class="buysell-field form-group">
+                <div class="form-label-group">
+                  <label class="form-label" for="buysell-amount"
+                    >So You Get The Naira(?) Value Of:</label
+                  >
+                </div>
+                <div class="form-control-group">
+                  <input
+                    class="form-control form-control-lg form-control-number changebordereth"
+                    type="text"
+                    value=""
+                    id="show_amountEth"
+                    readonly
+                  />
+                </div>
+              </div>
+              <!-- .buysell-field -->
+            </form>
+          </div>
+          <!-- LTC  -->
+          <div class="col-md-3 gray">
+            <form action="/rates" method="POST" class="buysell-form">
+              <h3>LTC</h3>
+              <div class="buysell-field form-group">
+                <div class="form-label-group">
+                  <label class="form-label"
+                    >You Want To Sell How Much ($):</label
+                  >
+                </div>
+                <input
+                  type="number"
+                  class="form-control form-control-lg form-control-number"
+                  value=""
+                  name="amountselling"
+                  id="quantity3"
+                  onkeyup="checkLTC()"
+                  step="any"
+                  required
+                />
+                <div class="buysell-field form-group">
+                  <div class="form-control-group"></div>
+                </div>
+              </div>
+
+              <div class="buysell-field form-group">
+                <div class="form-label-group">
+                  <label class="form-label" for="buysell-amount"
+                    >Value in LTC:</label
+                  >
+                </div>
+                <div class="form-control-group">
+                  <input
+                    class="input-bordered"
+                    type="hidden"
+                    value="<%= ltcvalue %>"
+                    name="btcrate"
+                    id="ltcRate"
+                    required
+                  />
+                  <input
+                    type="number"
+                    class="form-control form-control-lg form-control-number"
+                    value=""
+                    name="dividerateLtc"
+                    id="divide_amountLtc"
+                    readonly
+                    disabled
+                  />
+                </div>
+              </div>
+              <!-- .buysell-field -->
+
+              <div class="buysell-field form-group">
+                <div class="form-label-group">
+                  <label class="form-label" for="buysell-amount"
+                    >Rate (We Buy At):</label
+                  >
+                </div>
+                <div class="form-control-group">
+                  <input
+                    disabled
+                    class="form-control form-control-lg form-control-number"
+                    type="text"
+                    value="500"
+                    name="pricerateLtc"
+                    id="priceLtc"
+                    readonly
+                  />
+                </div>
+              </div>
+              <!-- .buysell-field -->
+
+              <div class="buysell-field form-group">
+                <div class="form-label-group">
+                  <label class="form-label" for="buysell-amount"
+                    >So You Get The Naira(?) Value Of:</label
+                  >
+                </div>
+                <div class="form-control-group">
+                  <input
+                    class="form-control form-control-lg form-control-number changeborderltc"
+                    type="text"
+                    value=""
+                    id="show_amountLtc"
+                    readonly
+                  />
+                </div>
+              </div>
+              <!-- .buysell-field -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- ======= Footer ======= -->
     <footer id="footer">
       <div class="footer-top">
@@ -272,4 +557,5 @@
   <script>
     AOS.init();
   </script>
+  <script></script>
 </html>

@@ -68,6 +68,49 @@ passport.deserializeUser(function (sessionContructor, done) {
   }
 });
 
+// Strategies
+// Google Strategy
+passport.use(
+  new GoogleStrategy(
+    {
+      clientID: process.env.google_client_id,
+      clientSecret: process.env.google_client_secret,
+      callbackURL: "http://localhost:8080/auth/google/deem-home",
+    },
+    function (accessToken, refreshToken, profile, cb) {
+      Google.findOrCreate(
+        {
+          googleId: profile.id,
+          username: profile.displayName,
+        },
+        function (err, user) {
+          return cb(err, user);
+        }
+      );
+    }
+  )
+);
+// Facebook Strategy
+passport.use(
+  new FacebookStrategy(
+    {
+      clientID: process.env.facebook_app_id,
+      clientSecret: process.env.facebook_app_secret,
+      callbackURL: "http://localhost:8080/auth/facebook/deem-home",
+    },
+    function (accessToken, refreshToken, profile, cb) {
+      Facebook.findOrCreate(
+        {
+          facebookId: profile.id,
+          username: profile.displayName,
+        },
+        function (err, user) {
+          return cb(err, user);
+        }
+      );
+    }
+  )
+);
 // Requests
 // Homepage Handler
 app.route("/").get((req, res) => {
@@ -90,7 +133,17 @@ app.route("/about").get((req, res) => {
 });
 // Rate page
 app.route("/rates").get((req, res) => {
-  res.render("rates");
+  Data().then((d) => {
+    let BTC = d.bitcoin.usd;
+    let ETH = d.ethereum.usd;
+    let LTC = d.litecoin.usd;
+    let BNB = d.binancecoin.usd;
+    res.render("rates", {
+      btcvalue: BTC,
+      ethvalue: ETH,
+      ltcvalue: LTC,
+    });
+  });
 });
 // Registeration handler
 app
@@ -157,6 +210,32 @@ app.route("/logout").get((req, res) => {
   req.logOut();
   res.redirect("/login");
 });
+
+// Google Auth
+app.get(
+  "/auth/google",
+  passport.authenticate("google", { scope: ["profile"] })
+);
+
+app.get(
+  "/auth/google/deem-home",
+  passport.authenticate("google", { failureRedirect: "/login" }),
+  function (req, res) {
+    // Successful authentication, redirect home.
+    res.redirect("/deem-home");
+  }
+);
+// Facebook Auth
+app.get("/auth/facebook", passport.authenticate("facebook"));
+
+app.get(
+  "/auth/facebook/deem-home",
+  passport.authenticate("facebook", { failureRedirect: "/login" }),
+  function (req, res) {
+    // Successful authentication, redirect home.
+    res.redirect("/deem-home");
+  }
+);
 // Homepage Handler
 app.route("/deem-home").get((req, res) => {
   if (req.isAuthenticated()) {
@@ -165,14 +244,23 @@ app.route("/deem-home").get((req, res) => {
     res.redirect("/login");
   }
 });
+// BTC Calculator
+app.route("/btccal").post((req, res) => {
+  const rate = 570;
+  res.json({ thesrate: rate });
+});
+// Eth calculator
+app.route("/ethcal").post((req, res) => {
+  const rate = 550;
+  res.json({ thesrate: rate });
+});
+// Ltc Calculator
+app.route("/ltccal").post((req, res) => {
+  const rate = 500;
+  res.json({ thesrate: rate });
+});
 const HOST = "0.0.0.0";
 //Listener
 app.listen(PORT, HOST, () => {
-  chromeLauncher
-    .launch({
-      startingUrl: `http://localhost:${PORT}`,
-    })
-    .then((chrome) => {
-      console.log(`Chrome debugging port running on ${chrome.port}`);
-    });
+  console.log("Started server on port 8080");
 });

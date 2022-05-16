@@ -158,10 +158,12 @@ body {
 ----------------------- */
 .ratebox {
   padding: 70px 0;
+  height: 70vh;
 }
 .ratebox .container-fluid .row {
   background-color: #9994ff;
   border-radius: 50px;
+  padding-bottom: 140px;
 }
 .ratebox .container-fluid .row .rate-text {
   padding-left: 40px;
@@ -170,6 +172,43 @@ body {
   align-items: flex-start;
   justify-content: center;
 }
+
+/* -------------------------------------  Converter- ----Section -------------- */
+.converter-section {
+  padding: 70px 0;
+}
+.converter-section .container-fluid .row {
+  grid-gap: 20px;
+  place-items: center;
+  justify-content: center;
+}
+/* .converter-section .container-fluid .row .col-md-3 h1 {
+  margin-bottom: 5px;
+} */
+.converter-section .container-fluid .row .dark {
+  background-color: var(--main-bg-color);
+  color: var(--Almost-white);
+  margin: 0 30px;
+  padding: 30px 20px;
+
+  border-radius: 20px;
+}
+.converter-section .container-fluid .row .light {
+  background-color: #89d0ff;
+  color: var(--main-bg-color);
+  margin: 0 30px;
+  padding: 30px 20px;
+
+  border-radius: 20px;
+}
+.converter-section .container-fluid .row .gray {
+  background-color: #edeef1;
+  color: var(--main-bg-color);
+  margin: 0 30px;
+  padding: 30px 20px;
+  border-radius: 20px;
+}
+
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
@@ -362,7 +401,11 @@ body {
     margin: 0 0 !important;
   }
   .ratebox {
-    padding: 30px 0;
+    padding: 40px 0;
+    height: auto;
+  }
+  .ratebox .container-fluid .row {
+    padding-bottom: 0px;
   }
   .rate-text h1 {
     padding-top: 30px;
