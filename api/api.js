@@ -2,10 +2,20 @@ const CoinGecko = require("coingecko-api");
 const CoinGeckoClient = new CoinGecko();
 var func = async () => {
   let Data = await CoinGeckoClient.simple.price({
-    ids: ["bitcoin", "ethereum", "litecoin", "binancecoin", "bitcoincash"],
+    ids: [
+      "bitcoin",
+      "ethereum",
+      "litecoin",
+      "binancecoin",
+      "bitcoin-cash",
+      "usd-coin",
+      "dogecoin",
+      "ripple",
+      "tether",
+      "tron",
+    ],
     vs_currencies: ["usd"],
   });
-  //   console.log(Data.data);
   return Data.data;
 };
 func();

@@ -115,16 +115,35 @@ passport.use(
 // Homepage Handler
 app.route("/").get((req, res) => {
   Data().then((d) => {
-    let BTC = d.bitcoin.usd;
-    let ETH = d.ethereum.usd;
-    let LTC = d.litecoin.usd;
-    let BNB = d.binancecoin.usd;
+    console.log(d);
+    let { BTC, ETH, LTC, BNB, USDC, RPE, BCH, TTH, DOGE, TRON } = coins();
+
     res.render("index", {
       btcvalue: BTC,
       ethvalue: ETH,
       ltcvalue: LTC,
       bnbvalue: BNB,
+      bchvalue: BCH,
+      rpevalue: RPE,
+      usdcvalue: USDC,
+      tthvalue: TTH,
+      dogevalue: DOGE,
+      tronvalue: TRON,
     });
+
+    function coins() {
+      let BTC = d.bitcoin.usd,
+        ETH = d.ethereum.usd,
+        LTC = d.litecoin.usd,
+        BNB = d.binancecoin.usd,
+        USDC = d["usd-coin"].usd,
+        RPE = d.ripple.usd,
+        BCH = d["bitcoin-cash"].usd,
+        TTH = d.tether.usd,
+        DOGE = d.dogecoin.usd,
+        TRON = d.tron.usd;
+      return { BTC, ETH, LTC, BNB, USDC, RPE, BCH, TTH, DOGE, TRON };
+    }
   });
 });
 // About Page
@@ -191,7 +210,6 @@ app
         return next(err);
       }
       if (!user) {
-        // *** Display message without using flash option
         // re-render the login form with a message
         return res.render("login", { errmsg: "Incorrect email or password" });
       }
