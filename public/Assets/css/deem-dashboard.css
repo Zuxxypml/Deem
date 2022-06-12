@@ -602,19 +602,39 @@ nav.close ~ .dashboard .top {
   background-color: #f7931a;
   color: #fff;
 }
+.btn-btc:hover {
+  background-color: #eea751;
+  color: #fff;
+}
 .btn-eth {
   background-color: #627eea;
+  color: #fff;
+}
+.btn-eth:hover {
+  background-color: #7991f1;
   color: #fff;
 }
 .btn-bch {
   background-color: #8dc351;
   color: #fff;
 }
+.btn-bch:hover {
+  background-color: #b0e276;
+  color: #fff;
+}
 .btn-usdc {
   background-color: #3e73c4;
   color: #fff;
 }
+.btn-usdc:hover {
+  background-color: #669cec;
+  color: #fff;
+}
 .btn-doge {
   background-color: #c3a634;
+  color: #fff;
+}
+.btn-doge:hover {
+  background-color: #f0d35e;
   color: #fff;
 }
