@@ -107,6 +107,10 @@ body {
   background-color: var(--main-bg-color);
   height: 90px;
   z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
 .navbar .container-fluid {
   padding: 0 5% !important;
@@ -152,6 +156,7 @@ body {
 
 /* Showcase  */
 .showcase {
+  margin-top: 90px;
   padding: 5% 0;
   background-color: var(--main-bg-color);
   color: var(--Almost-white);

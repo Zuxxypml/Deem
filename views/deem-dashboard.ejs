@@ -1,118 +1,266 @@
 <!DOCTYPE html>
+<!--=== Coding by CodingLab | www.codinglabweb.com === -->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- =========================================================  -->
-    <link rel="icon" type="image/png" href="Assets/img/icons/favicon.ico" />
+
+    <!----===== Iconscout CSS ===== -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+
     <!----======== CSS ======== -->
     <link rel="stylesheet" href="Assets/css/deem-dashboard.css" />
 
-    <!----===== Boxicons CSS ===== -->
-    <link
-      href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-
-    <title>Deem - Dashboard</title>
+    <title>Diamond Exchange - Dashboard</title>
   </head>
   <body>
-    <nav class="sidebar close">
-      <header>
-        <div class="image-text">
-          <span class="image">
-            <img src="logo.png" alt="" />
-          </span>
-
-          <div class="text logo-text">
-            <!-- <span class="name">Deem</span> -->
-            <span class="profession">Admin</span>
-          </div>
+    <nav>
+      <div class="logo-name">
+        <div class="logo-image">
+          <img src="Assets/img/logo.png" alt="" />
         </div>
 
-        <i class="bx bx-chevron-right toggle"></i>
-      </header>
+        <span class="logo_name">Diamond Exchange</span>
+      </div>
 
-      <div class="menu-bar">
-        <div class="menu">
-          <li class="search-box">
-            <i class="bx bx-search icon"></i>
-            <input type="text" placeholder="Search..." />
+      <div class="menu-items">
+        <ul class="nav-links">
+          <li>
+            <a href="#" class="active">
+              <i class="uil uil-estate"></i>
+              <span class="link-name">Dashboard</span>
+            </a>
           </li>
+          <li>
+            <a href="#">
+              <i class="uil uil-exchange"></i>
+              <span class="link-name">Sell Coins</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="uil uil-card-atm"></i>
+              <span class="link-name">Sell Giftcards</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="uil uil-bell"></i>
+              <span class="link-name">Notifications</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="uil uil-wallet"></i>
+              <span class="link-name">Wallet</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="uil uil-user"></i>
+              <span class="link-name">My Account</span>
+            </a>
+          </li>
+        </ul>
 
-          <ul class="menu-links">
-            <li class="nav-link">
-              <a href="#">
-                <i class="bx bx-home-alt icon"></i>
-                <span class="text nav-text">Dashboard</span>
-              </a>
-            </li>
-
-            <li class="nav-link">
-              <a href="#">
-                <i class="bx bx-bar-chart-alt-2 icon"></i>
-                <span class="text nav-text">Revenue</span>
-              </a>
-            </li>
-
-            <li class="nav-link">
-              <a href="#">
-                <i class="bx bx-bell icon"></i>
-                <span class="text nav-text">Notifications</span>
-              </a>
-            </li>
-
-            <li class="nav-link">
-              <a href="#">
-                <i class="bx bx-pie-chart-alt icon"></i>
-                <span class="text nav-text">Analytics</span>
-              </a>
-            </li>
-
-            <li class="nav-link">
-              <a href="#">
-                <i class="bx bx-heart icon"></i>
-                <span class="text nav-text">Likes</span>
-              </a>
-            </li>
-
-            <li class="nav-link">
-              <a href="#">
-                <i class="bx bx-wallet icon"></i>
-                <span class="text nav-text">Wallets</span>
-              </a>
-            </li>
-          </ul>
-        </div>
-
-        <div class="bottom-content">
-          <li class="">
+        <ul class="logout-mode">
+          <li>
             <a href="/logout">
-              <i class="bx bx-log-out icon"></i>
-              <span class="text nav-text">Logout</span>
+              <i class="uil uil-signout"></i>
+              <span class="link-name">Logout</span>
             </a>
           </li>
 
           <li class="mode">
-            <div class="sun-moon">
-              <i class="bx bx-moon icon moon"></i>
-              <i class="bx bx-sun icon sun"></i>
-            </div>
-            <span class="mode-text text">Dark mode</span>
+            <a href="#">
+              <i class="uil uil-moon"></i>
+              <span class="link-name">Dark Mode</span>
+            </a>
 
-            <div class="toggle-switch">
+            <div class="mode-toggle">
               <span class="switch"></span>
             </div>
           </li>
-        </div>
+        </ul>
       </div>
     </nav>
 
-    <section class="home">
-      <div class="text">Deem</div>
-    </section>
+    <section class="dashboard">
+      <div class="top">
+        <i class="uil uil-bars sidebar-toggle"></i>
 
-    <script src="Assets/js/deem-dashboard.js"></script>
+        <div class="search-box">
+          <i class="uil uil-search"></i>
+          <input type="text" placeholder="Search here..." />
+        </div>
+
+        <img src="Assets/img/testimonials/testimonials-1.jpg" alt="" />
+      </div>
+
+      <div class="dash-content">
+        <div class="overview">
+          <div class="title">
+            <i class="uil uil-tachometer-fast-alt"></i>
+            <span class="text">Dashboard</span>
+          </div>
+
+          <div class="boxes">
+            <!-- Bitcoin Box  -->
+            <div class="box box1">
+              <div class="sell-coin">
+                <img src="Assets/img/btc.svg" alt="" />
+                <div class="text">
+                  <a href="/sell-btc" class="btn btn-btc">Sell Bitcoin</a>
+                </div>
+              </div>
+              <div class="rate">
+                <span class="text">Rate:</span>
+                <div class="price text">570₦/$</div>
+              </div>
+              <div class="rate">
+                <div class="live-value text">Live Value:</div>
+                <div class="value text">$30000</div>
+              </div>
+            </div>
+            <!-- Ethereum Box  -->
+            <div class="box box2">
+              <div class="sell-coin">
+                <img src="Assets/img/eth.svg" alt="" />
+                <div class="text">
+                  <a href="/sell-eth" class="btn btn-eth">Sell Ethereum</a>
+                </div>
+              </div>
+              <div class="rate">
+                <span class="text">Rate:</span>
+                <div class="price text">570₦/$</div>
+              </div>
+              <div class="rate">
+                <div class="live-value text">Live Value:</div>
+                <div class="value text">$30000</div>
+              </div>
+            </div>
+            <!-- BCH  -->
+            <div class="box box3">
+              <div class="sell-coin">
+                <img src="Assets/img/bch.svg" alt="" />
+                <div class="text">
+                  <a href="/sell-bch" class="btn btn-bch">Sell BCH</a>
+                </div>
+              </div>
+              <div class="rate">
+                <span class="text">Rate:</span>
+                <div class="price text">570₦/$</div>
+              </div>
+              <div class="rate">
+                <div class="live-value text">Live Value:</div>
+                <div class="value text">$30000</div>
+              </div>
+            </div>
+            <!-- USDT  -->
+            <div class="box box2">
+              <div class="sell-coin">
+                <img src="Assets/img/usdc.svg" alt="" />
+                <div class="text">
+                  <a href="/sell-usdc" class="btn btn-usdc">Sell USDC</a>
+                </div>
+              </div>
+              <div class="rate">
+                <span class="text">Rate:</span>
+                <div class="price text">570₦/$</div>
+              </div>
+              <div class="rate">
+                <div class="live-value text">Live Value:</div>
+                <div class="value text">$30000</div>
+              </div>
+            </div>
+            <!-- USDT  -->
+            <div class="box box4">
+              <div class="sell-coin">
+                <img src="Assets/img/doge.svg" alt="" />
+                <div class="text">
+                  <a href="/sell-doge" class="btn btn-doge">Sell DOGE</a>
+                </div>
+              </div>
+              <div class="rate">
+                <span class="text">Rate:</span>
+                <div class="price text">570₦/$</div>
+              </div>
+              <div class="rate">
+                <div class="live-value text">Live Value:</div>
+                <div class="value text">$30000</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="activity">
+          <div class="title">
+            <i class="uil uil-clock-three"></i>
+            <span class="text">Recent Activity</span>
+          </div>
+
+          <div class="activity-data">
+            <div class="data names">
+              <span class="data-title">Name</span>
+              <span class="data-list">Prem Shahi</span>
+              <span class="data-list">Deepa Chand</span>
+              <span class="data-list">Manisha Chand</span>
+              <span class="data-list">Pratima Shahi</span>
+              <span class="data-list">Man Shahi</span>
+              <span class="data-list">Ganesh Chand</span>
+              <span class="data-list">Bikash Chand</span>
+            </div>
+            <div class="data email">
+              <span class="data-title">Email</span>
+              <span class="data-list">premshahi@gmail.com</span>
+              <span class="data-list">deepachand@gmail.com</span>
+              <span class="data-list">prakashhai@gmail.com</span>
+              <span class="data-list">manishachand@gmail.com</span>
+              <span class="data-list">pratimashhai@gmail.com</span>
+              <span class="data-list">manshahi@gmail.com</span>
+              <span class="data-list">ganeshchand@gmail.com</span>
+            </div>
+            <div class="data joined">
+              <span class="data-title">Joined</span>
+              <span class="data-list">2022-02-12</span>
+              <span class="data-list">2022-02-12</span>
+              <span class="data-list">2022-02-13</span>
+              <span class="data-list">2022-02-13</span>
+              <span class="data-list">2022-02-14</span>
+              <span class="data-list">2022-02-14</span>
+              <span class="data-list">2022-02-15</span>
+            </div>
+            <div class="data type">
+              <span class="data-title">Type</span>
+              <span class="data-list">New</span>
+              <span class="data-list">Member</span>
+              <span class="data-list">Member</span>
+              <span class="data-list">New</span>
+              <span class="data-list">Member</span>
+              <span class="data-list">New</span>
+              <span class="data-list">Member</span>
+            </div>
+            <div class="data status">
+              <span class="data-title">Status</span>
+              <span class="data-list">Liked</span>
+              <span class="data-list">Liked</span>
+              <span class="data-list">Liked</span>
+              <span class="data-list">Liked</span>
+              <span class="data-list">Liked</span>
+              <span class="data-list">Liked</span>
+              <span class="data-list">Liked</span>
+            </div>
+          </div>
+          -->
+        </div>
+      </div>
+    </section>
   </body>
+
+  <!-- Core Javascript  -->
+  <script src="Assets/js/deem-dashboard.js"></script>
 </html>
