@@ -1,21 +1,17 @@
 //Creating Prerequisites
 require("dotenv").config();
-const chromeLauncher = require("chrome-launcher");
 const express = require("express");
 const CoinGecko = require("coingecko-api");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
-const { default: mongoose } = require("mongoose");
 const session = require("express-session");
 const passport = require("passport");
-const passportLocalMongoose = require("passport-local-mongoose");
+const homePage = require(__dirname + "/pages/homePage.js");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const FacebookStrategy = require("passport-facebook").Strategy;
-const findOrCreate = require("mongoose-findorcreate");
 const { Google, Facebook, Local } = require(__dirname + "/controllers/users");
 const Data = require(__dirname + "/api/api.js");
 const app = express();
-const CoinGeckoClient = new CoinGecko();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
@@ -113,39 +109,7 @@ passport.use(
 );
 // Requests
 // Homepage Handler
-app.route("/").get((req, res) => {
-  Data().then((d) => {
-    console.log(d);
-    let { BTC, ETH, LTC, BNB, USDC, RPE, BCH, TTH, DOGE, TRON } = coins();
-
-    res.render("index", {
-      btcvalue: BTC,
-      ethvalue: ETH,
-      ltcvalue: LTC,
-      bnbvalue: BNB,
-      bchvalue: BCH,
-      rpevalue: RPE,
-      usdcvalue: USDC,
-      tthvalue: TTH,
-      dogevalue: DOGE,
-      tronvalue: TRON,
-    });
-
-    function coins() {
-      let BTC = d.bitcoin.usd,
-        ETH = d.ethereum.usd,
-        LTC = d.litecoin.usd,
-        BNB = d.binancecoin.usd,
-        USDC = d["usd-coin"].usd,
-        RPE = d.ripple.usd,
-        BCH = d["bitcoin-cash"].usd,
-        TTH = d.tether.usd,
-        DOGE = d.dogecoin.usd,
-        TRON = d.tron.usd;
-      return { BTC, ETH, LTC, BNB, USDC, RPE, BCH, TTH, DOGE, TRON };
-    }
-  });
-});
+app.route("/").get((req, res) => homePage(req, res));
 // About Page
 app.route("/about").get((req, res) => {
   res.render("about");
