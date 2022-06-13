@@ -1,17 +1,30 @@
 //Creating Prerequisites
 require("dotenv").config();
 const express = require("express");
-const CoinGecko = require("coingecko-api");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const session = require("express-session");
 const passport = require("passport");
+const ratePage = require("./pages/ratePage");
+const registerPage = require("./pages/registerPage");
+
 const homePage = require(__dirname + "/pages/homePage.js");
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const FacebookStrategy = require("passport-facebook").Strategy;
+const findOrCreate = require("mongoose-findorcreate");
+const passportLocalMongoose = require("passport-local-mongoose");
+const loginPage = require("./pages/loginPage");
+const localLogin = require("./Auth/Local/LocalLogin");
+const dashBoard = require("./pages/dashBoard");
+const {
+  btcRate,
+  ethRate,
+  ltcRate,
+} = require("./calculators/coinRateCalculator");
+const registerLocalUser = require("./Auth/Local/LocalRegistration");
 const { Google, Facebook, Local } = require(__dirname + "/controllers/users");
-const Data = require(__dirname + "/api/api.js");
 const app = express();
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.set("view engine", "ejs");
@@ -109,84 +122,26 @@ passport.use(
 );
 // Requests
 // Homepage Handler
-app.route("/").get((req, res) => homePage(req, res));
+app.route("/").get(homePage);
 // About Page
 app.route("/about").get((req, res) => {
   res.render("about");
 });
 // Rate page
-app.route("/rates").get((req, res) => {
-  Data().then((d) => {
-    let BTC = d.bitcoin.usd;
-    let ETH = d.ethereum.usd;
-    let LTC = d.litecoin.usd;
-    let BNB = d.binancecoin.usd;
-    res.render("rates", {
-      btcvalue: BTC,
-      ethvalue: ETH,
-      ltcvalue: LTC,
-    });
-  });
-});
+app.route("/rates").get(ratePage);
 // Registeration handler
 app
   .route("/register")
-  .get((req, res) => {
-    res.render("register", { errmsg: "" });
-  })
+  .get(registerPage)
   .post(
-    (req, res, next) => {
-      const username = req.body.username;
-      const email = req.body.email;
-      const password = req.body.pass;
-      Local.register(
-        // saves email as username
-        { username: email, email: username },
-        password,
-        function (err, user) {
-          if (err) {
-            console.log(err);
-            res.render("register", {
-              errmsg: "A User with the given username or email exists",
-            });
-          } else if (!err) {
-            next();
-          }
-
-          // go to the next middleware
-        }
-      );
-    },
+    registerLocalUser,
     passport.authenticate("local", {
       successRedirect: "/deem-home",
       failureRedirect: "/login",
     })
   );
 // Login Handler
-app
-  .route("/login")
-  .get((req, res) => {
-    res.render("login", { errmsg: "" });
-  })
-  .post((req, res, next) => {
-    passport.authenticate("local", function (err, user, info) {
-      if (err) {
-        return next(err);
-      }
-      if (!user) {
-        // re-render the login form with a message
-        return res.render("login", { errmsg: "Incorrect email or password" });
-      }
-      req.logIn(user, function (err) {
-        if (err) {
-          // return next(err);
-          console.log(err);
-          res.render("login", { errmsg: "Incorrect email or password" });
-        }
-        return res.redirect("/deem-home");
-      });
-    })(req, res, next);
-  });
+app.route("/login").get(loginPage).post(localLogin);
 // Logout
 app.route("/logout").get((req, res) => {
   req.logOut();
@@ -202,10 +157,7 @@ app.get(
 app.get(
   "/auth/google/deem-home",
   passport.authenticate("google", { failureRedirect: "/login" }),
-  function (req, res) {
-    // Successful authentication, redirect home.
-    res.redirect("/deem-home");
-  }
+  (req, res) => res.redirect("/deem-home")
 );
 // Facebook Auth
 app.get("/auth/facebook", passport.authenticate("facebook"));
@@ -213,59 +165,16 @@ app.get("/auth/facebook", passport.authenticate("facebook"));
 app.get(
   "/auth/facebook/deem-home",
   passport.authenticate("facebook", { failureRedirect: "/login" }),
-  function (req, res) {
-    // Successful authentication, redirect home.
-    res.redirect("/deem-home");
-  }
+  (req, res) => res.redirect("/deem-home")
 );
 // Homepage Handler
-app.route("/deem-home").get((req, res) => {
-  if (req.isAuthenticated()) {
-    Data().then((d) => {
-      console.log(d);
-      let { BTC, ETH, LTC, BNB, USDC, RPE, BCH, TTH, DOGE, TRON } = coins();
-
-      res.render("deem-dashboard", {
-        btcvalue: BTC,
-        ethvalue: ETH,
-        bchvalue: BCH,
-        usdcvalue: USDC,
-        dogevalue: DOGE,
-      });
-
-      function coins() {
-        let BTC = d.bitcoin.usd,
-          ETH = d.ethereum.usd,
-          LTC = d.litecoin.usd,
-          BNB = d.binancecoin.usd,
-          USDC = d["usd-coin"].usd,
-          RPE = d.ripple.usd,
-          BCH = d["bitcoin-cash"].usd,
-          TTH = d.tether.usd,
-          DOGE = d.dogecoin.usd,
-          TRON = d.tron.usd;
-        return { BTC, ETH, LTC, BNB, USDC, RPE, BCH, TTH, DOGE, TRON };
-      }
-    });
-  } else {
-    res.redirect("/login");
-  }
-});
+app.route("/deem-home").get(dashBoard);
 // BTC Calculator
-app.route("/btccal").post((req, res) => {
-  const rate = 570;
-  res.json({ thesrate: rate });
-});
+app.route("/btccal").post(btcRate);
 // Eth calculator
-app.route("/ethcal").post((req, res) => {
-  const rate = 550;
-  res.json({ thesrate: rate });
-});
+app.route("/ethcal").post(ethRate);
 // Ltc Calculator
-app.route("/ltccal").post((req, res) => {
-  const rate = 500;
-  res.json({ thesrate: rate });
-});
+app.route("/ltccal").post(ltcRate);
 const HOST = "0.0.0.0";
 //Listener
 app.listen(PORT, HOST, () => {
