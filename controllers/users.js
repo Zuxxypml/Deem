@@ -24,12 +24,16 @@ localUserSchema.plugin(findOrCreate);
 const googleUserSchema = new mongoose.Schema({
   googleId: String,
   name: String,
+  imageURL: String,
+  username: String,
 });
 googleUserSchema.plugin(passportLocalMongoose);
 googleUserSchema.plugin(findOrCreate);
 const facebookUserSchema = new mongoose.Schema({
   facebookId: String,
   name: String,
+  imageURL: String,
+  username: String,
 });
 facebookUserSchema.plugin(passportLocalMongoose);
 facebookUserSchema.plugin(findOrCreate);

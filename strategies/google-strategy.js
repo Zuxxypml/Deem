@@ -9,13 +9,31 @@ const MygoogleStrategy = new GoogleStrategy(
     callbackURL: "http://localhost:8080/auth/google/deem-home",
   },
   function (accessToken, refreshToken, profile, cb) {
-    Google.findOrCreate(
+    const imageURL = profile.photos[0].value;
+    Google.findOne(
       {
         googleId: profile.id,
         name: profile.displayName,
+        username: profile.displayName,
       },
       function (err, user) {
-        return cb(err, user);
+        if (!err) {
+          if (user) {
+            return cb(err, user);
+          } else {
+            Google.create(
+              {
+                googleId: profile.id,
+                name: profile.displayName,
+                username: profile.displayName,
+                imageURL: imageURL,
+              },
+              (err, user) => {
+                return cb(err, user);
+              }
+            );
+          }
+        }
       }
     );
   }
