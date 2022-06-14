@@ -17,6 +17,7 @@ const localUserSchema = new mongoose.Schema({
   username: String,
   name: String,
   password: String,
+  imageURL: String,
 });
 localUserSchema.plugin(passportLocalMongoose);
 localUserSchema.plugin(findOrCreate);

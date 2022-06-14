@@ -37,6 +37,7 @@ function handleRequest(param, req, res) {
             usdcvalue: USDC,
             dogevalue: DOGE,
             user: foundUser.name,
+            imageURL: foundUser.imageURL,
           });
         });
       }
