@@ -15,20 +15,20 @@ run()
 // Defining Schemas
 const localUserSchema = new mongoose.Schema({
   username: String,
-  email: String,
+  name: String,
   password: String,
 });
 localUserSchema.plugin(passportLocalMongoose);
 localUserSchema.plugin(findOrCreate);
 const googleUserSchema = new mongoose.Schema({
   googleId: String,
-  username: String,
+  name: String,
 });
 googleUserSchema.plugin(passportLocalMongoose);
 googleUserSchema.plugin(findOrCreate);
 const facebookUserSchema = new mongoose.Schema({
   facebookId: String,
-  username: String,
+  name: String,
 });
 facebookUserSchema.plugin(passportLocalMongoose);
 facebookUserSchema.plugin(findOrCreate);

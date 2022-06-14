@@ -12,7 +12,7 @@ const facebookStrategy = new FacebookStrategy(
     Facebook.findOrCreate(
       {
         facebookId: profile.id,
-        username: profile.displayName,
+        name: profile.displayName,
       },
       function (err, user) {
         return cb(err, user);

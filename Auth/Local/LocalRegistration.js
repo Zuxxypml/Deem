@@ -6,7 +6,7 @@ function registerLocalUser(req, res, next) {
   const password = req.body.pass;
   Local.register(
     // saves email as username
-    { username: email, email: username },
+    { username: email, name: username },
     password,
     function (err, user) {
       if (err) {

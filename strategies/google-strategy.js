@@ -12,7 +12,7 @@ const MygoogleStrategy = new GoogleStrategy(
     Google.findOrCreate(
       {
         googleId: profile.id,
-        username: profile.displayName,
+        name: profile.displayName,
       },
       function (err, user) {
         return cb(err, user);
