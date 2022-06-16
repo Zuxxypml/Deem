@@ -9,10 +9,10 @@
       rel="stylesheet"
       href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
     />
-        <!-- =========================================================  -->
+    <!-- =========================================================  -->
     <link rel="icon" type="image/png" href="Assets/img/icons/favicon.ico" />
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="Assets/css/deem-dashboard.css" />
+    <link rel="stylesheet" href="Assets/css/sellCoins.css" />
 
     <title>Diamond Exchange - Dashboard</title>
   </head>
@@ -22,20 +22,19 @@
         <div class="logo-image">
           <img src="Assets/img/logo.png" alt="" />
         </div>
-
         <span class="logo_name">Diamond Exchange</span>
       </div>
 
       <div class="menu-items">
         <ul class="nav-links">
           <li>
-            <a href="/deem-home" class="active">
+            <a href="/deem-home">
               <i class="uil uil-estate"></i>
               <span class="link-name">Dashboard</span>
             </a>
           </li>
           <li>
-            <a href="/sell-coins">
+            <a href="/sell-coins" class="active">
               <i class="uil uil-exchange"></i>
               <span class="link-name">Sell Coins</span>
             </a>
@@ -101,7 +100,7 @@
         <div class="overview">
           <div class="title">
             <i class="uil uil-tachometer-fast-alt"></i>
-            <span class="text">Dashboard</span>
+            <span class="text">Sell Coins</span>
           </div>
 
           <div class="boxes">
@@ -110,7 +109,7 @@
               <div class="sell-coin">
                 <img src="Assets/img/btc.svg" alt="" />
                 <div class="text">
-                  <a href="/sell-coins" class="btn btn-btc">Sell Bitcoin</a>
+                  <a href="/sell-btc" class="btn btn-btc">Sell Bitcoin</a>
                 </div>
               </div>
               <div class="rate">
@@ -127,7 +126,7 @@
               <div class="sell-coin">
                 <img src="Assets/img/eth.svg" alt="" />
                 <div class="text">
-                  <a href="/sell-coins" class="btn btn-eth">Sell Ethereum</a>
+                  <a href="/sell-eth" class="btn btn-eth">Sell Ethereum</a>
                 </div>
               </div>
               <div class="rate">
@@ -144,7 +143,7 @@
               <div class="sell-coin">
                 <img src="Assets/img/bch.svg" alt="" />
                 <div class="text">
-                  <a href="/sell-coins" class="btn btn-bch">Sell BCH</a>
+                  <a href="/sell-bch" class="btn btn-bch">Sell BCH</a>
                 </div>
               </div>
               <div class="rate">
@@ -161,7 +160,7 @@
               <div class="sell-coin">
                 <img src="Assets/img/usdc.svg" alt="" />
                 <div class="text">
-                  <a href="/sell-coins" class="btn btn-usdc">Sell USDC</a>
+                  <a href="/sell-usdc" class="btn btn-usdc">Sell USDC</a>
                 </div>
               </div>
               <div class="rate">
@@ -178,7 +177,7 @@
               <div class="sell-coin">
                 <img src="Assets/img/doge.svg" alt="" />
                 <div class="text">
-                  <a href="/sell-coins" class="btn btn-doge">Sell DOGE</a>
+                  <a href="/sell-doge" class="btn btn-doge">Sell DOGE</a>
                 </div>
               </div>
               <div class="rate">
@@ -195,7 +194,7 @@
               <div class="sell-coin">
                 <img src="Assets/img/othercoins.png" alt="" />
                 <div class="text">
-                  <a href="/sell-coins" class="btn btn-other-coin"
+                  <a href="/sell-other-coins" class="btn btn-other-coin"
                     >Sell Other Coins</a
                   >
                 </div>
@@ -211,70 +210,10 @@
             </div>
           </div>
         </div>
-
-        <div class="activity">
-          <div class="title">
-            <i class="uil uil-clock-three"></i>
-            <span class="text">Recent Activity</span>
-          </div>
-
-          <div class="activity-data">
-            <div class="data names">
-              <span class="data-title">Name</span>
-              <span class="data-list">Prem Shahi</span>
-              <span class="data-list">Deepa Chand</span>
-              <span class="data-list">Manisha Chand</span>
-              <span class="data-list">Pratima Shahi</span>
-              <span class="data-list">Man Shahi</span>
-              <span class="data-list">Ganesh Chand</span>
-              <span class="data-list">Bikash Chand</span>
-            </div>
-            <div class="data email">
-              <span class="data-title">Email</span>
-              <span class="data-list">premshahi@gmail.com</span>
-              <span class="data-list">deepachand@gmail.com</span>
-              <span class="data-list">prakashhai@gmail.com</span>
-              <span class="data-list">manishachand@gmail.com</span>
-              <span class="data-list">pratimashhai@gmail.com</span>
-              <span class="data-list">manshahi@gmail.com</span>
-              <span class="data-list">ganeshchand@gmail.com</span>
-            </div>
-            <div class="data joined">
-              <span class="data-title">Amount</span>
-              <span class="data-list">$200</span>
-              <span class="data-list">$70</span>
-              <span class="data-list">$7880</span>
-              <span class="data-list">$2900</span>
-              <span class="data-list">$5000</span>
-              <span class="data-list">$25660</span>
-              <span class="data-list">$27890</span>
-            </div>
-            <div class="data type">
-              <span class="data-title">Coin</span>
-              <span class="data-list">Bitcoin</span>
-              <span class="data-list">USDC</span>
-              <span class="data-list">USDC</span>
-              <span class="data-list">Ethereum</span>
-              <span class="data-list">DOGE</span>
-              <span class="data-list">BCH</span>
-              <span class="data-list">Tron</span>
-            </div>
-            <div class="data status">
-              <span class="data-title">Status</span>
-              <span class="data-list">Sent</span>
-              <span class="data-list">Pending</span>
-              <span class="data-list">Pending</span>
-              <span class="data-list">Sent</span>
-              <span class="data-list">Pending</span>
-              <span class="data-list">Pending</span>
-              <span class="data-list">Pending</span>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   </body>
 
   <!-- Core Javascript  -->
-  <script src="Assets/js/deem-dashboard.js"></script>
+  <script src="Assets/js/sellCoins.js"></script>
 </html>
