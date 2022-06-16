@@ -18,6 +18,7 @@ const {
 } = require("./calculators/coinRateCalculator");
 const registerLocalUser = require("./Auth/Local/LocalRegistration");
 const sellCoins = require("./pages/sellCoins");
+const sellCards = require("./pages/sellCards");
 require("./utils/passport");
 const app = express();
 
@@ -80,6 +81,7 @@ app.get(
 app.route("/deem-home").get(dashBoard);
 // Sell Coins Handler
 app.route("/sell-coins").get(sellCoins);
+app.route("/sell-cards").get(sellCards);
 // BTC Calculator
 app.route("/btccal").post(btcRate);
 // Eth calculator

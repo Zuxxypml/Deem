@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -12,7 +13,7 @@
     <!-- =========================================================  -->
     <link rel="icon" type="image/png" href="Assets/img/icons/favicon.ico" />
     <!----======== CSS ======== -->
-    <link rel="stylesheet" href="Assets/css/sellCoins.css" />
+    <link rel="stylesheet" href="Assets/css/sellCards.css" />
 
     <title>Diamond Exchange - Dashboard</title>
   </head>
@@ -34,13 +35,13 @@
             </a>
           </li>
           <li>
-            <a href="/sell-coins" class="active">
+            <a href="/sell-coins">
               <i class="uil uil-exchange"></i>
               <span class="link-name">Sell Coins</span>
             </a>
           </li>
           <li>
-            <a href="/sell-cards">
+            <a href="/sell-cards" class="active">
               <i class="uil uil-card-atm"></i>
               <span class="link-name">Sell Giftcards</span>
             </a>
@@ -100,112 +101,116 @@
         <div class="overview">
           <div class="title">
             <i class="uil uil-tachometer-fast-alt"></i>
-            <span class="text">Sell Coins</span>
+            <span class="text">Sell Giftcards</span>
           </div>
 
           <div class="boxes">
             <!-- Bitcoin Box  -->
             <div class="box box1">
               <div class="sell-coin">
-                <img src="Assets/img/btc.svg" alt="" />
-                <div class="text">
-                  <a href="/sell-btc" class="btn btn-btc">Sell Bitcoin</a>
-                </div>
+                <img src="Assets/img//giftcards/amazon.png" alt="" />
               </div>
-              <div class="rate">
-                <span class="text">Rate:</span>
+              <div class="box-info">
                 <div class="price text">570₦/$</div>
-              </div>
-              <div class="rate">
-                <div class="live-value text">Live Value:</div>
-                <div class="value text">$<%=btcvalue%></div>
+                <a href="/sell-other-coins" class="btn btn-other-coin"
+                  >Sell Amazon</a
+                >
               </div>
             </div>
-            <!-- Ethereum Box  -->
-            <div class="box box2">
+            <!-- Bitcoin Box  -->
+            <div class="box box1">
               <div class="sell-coin">
-                <img src="Assets/img/eth.svg" alt="" />
-                <div class="text">
-                  <a href="/sell-eth" class="btn btn-eth">Sell Ethereum</a>
-                </div>
+                <img src="Assets/img//giftcards/american.jpg" alt="" />
               </div>
-              <div class="rate">
-                <span class="text">Rate:</span>
+              <div class="box-info">
                 <div class="price text">570₦/$</div>
-              </div>
-              <div class="rate">
-                <div class="live-value text">Live Value:</div>
-                <div class="value text">$<%=ethvalue%></div>
+                <a href="/sell-other-coins" class="btn btn-other-coin"
+                  >Sell Amazon</a
+                >
               </div>
             </div>
-            <!-- BCH  -->
-            <div class="box box3">
+            <!-- Bitcoin Box  -->
+            <div class="box box1">
               <div class="sell-coin">
-                <img src="Assets/img/bch.svg" alt="" />
-                <div class="text">
-                  <a href="/sell-bch" class="btn btn-bch">Sell BCH</a>
-                </div>
+                <img src="Assets/img//giftcards/apple.png" alt="" />
               </div>
-              <div class="rate">
-                <span class="text">Rate:</span>
+              <div class="box-info">
                 <div class="price text">570₦/$</div>
-              </div>
-              <div class="rate">
-                <div class="live-value text">Live Value:</div>
-                <div class="value text">$<%=bchvalue%></div>
+                <a href="/sell-other-coins" class="btn btn-other-coin"
+                  >Sell Amazon</a
+                >
               </div>
             </div>
-            <!-- USDT  -->
-            <div class="box box2">
+            <!-- Bitcoin Box  -->
+            <div class="box box1">
               <div class="sell-coin">
-                <img src="Assets/img/usdc.svg" alt="" />
-                <div class="text">
-                  <a href="/sell-usdc" class="btn btn-usdc">Sell USDC</a>
-                </div>
+                <img src="Assets/img//giftcards/cashapp.png" alt="" />
               </div>
-              <div class="rate">
-                <span class="text">Rate:</span>
+              <div class="box-info">
                 <div class="price text">570₦/$</div>
-              </div>
-              <div class="rate">
-                <div class="live-value text">Live Value:</div>
-                <div class="value text">$<%=usdcvalue%></div>
+                <a href="/sell-other-coins" class="btn btn-other-coin"
+                  >Sell Amazon</a
+                >
               </div>
             </div>
-            <!-- USDT  -->
-            <div class="box box4">
+            <!-- Bitcoin Box  -->
+            <div class="box box1">
               <div class="sell-coin">
-                <img src="Assets/img/doge.svg" alt="" />
-                <div class="text">
-                  <a href="/sell-doge" class="btn btn-doge">Sell DOGE</a>
-                </div>
+                <img src="Assets/img//giftcards/nike.png" alt="" />
               </div>
-              <div class="rate">
-                <span class="text">Rate:</span>
+              <div class="box-info">
                 <div class="price text">570₦/$</div>
-              </div>
-              <div class="rate">
-                <div class="live-value text">Live Value:</div>
-                <div class="value text">$<%=dogevalue%></div>
+                <a href="/sell-other-coins" class="btn btn-other-coin"
+                  >Sell Amazon</a
+                >
               </div>
             </div>
-            <!-- Other Coins  -->
-            <div class="box box5">
+            <!-- Bitcoin Box  -->
+            <div class="box box1">
               <div class="sell-coin">
-                <img src="Assets/img/othercoins.png" alt="" />
-                <div class="text">
-                  <a href="/sell-other-coins" class="btn btn-other-coin"
-                    >Sell Other Coins</a
-                  >
-                </div>
+                <img src="Assets/img//giftcards/itunes.jpg" alt="" />
               </div>
-              <div class="rate">
-                <span class="text">Rate:</span>
+              <div class="box-info">
                 <div class="price text">570₦/$</div>
+                <a href="/sell-other-coins" class="btn btn-other-coin"
+                  >Sell Amazon</a
+                >
               </div>
-              <div class="rate">
-                <div class="live-value text">Live Value:</div>
-                <div class="value text">$<%=dogevalue%></div>
+            </div>
+            <!-- Bitcoin Box  -->
+            <div class="box box1">
+              <div class="sell-coin">
+                <img src="Assets/img//giftcards/google.jpg" alt="" />
+              </div>
+              <div class="box-info">
+                <div class="price text">570₦/$</div>
+                <a href="/sell-other-coins" class="btn btn-other-coin"
+                  >Sell Amazon</a
+                >
+              </div>
+            </div>
+            <!-- Bitcoin Box  -->
+            <div class="box box1">
+              <div class="sell-coin">
+                <img src="Assets/img//giftcards/footlocker.jpg" alt="" />
+              </div>
+              <div class="box-info">
+                <div class="price text">570₦/$</div>
+                <a href="/sell-other-coins" class="btn btn-other-coin"
+                  >Sell Amazon</a
+                >
+              </div>
+            </div>
+            <!-- Bitcoin Box  -->
+            <div class="box box1">
+              <div class="sell-coin">
+                <img src="Assets/img//giftcards/nordstrom.jpg" alt="" />
+              </div>
+              <div class="box-info">
+                <div class="price text">570₦/$</div>
+                <a href="/sell-other-coins" class="btn btn-other-coin"
+                  >Sell Amazon</a
+                >
               </div>
             </div>
           </div>
@@ -215,5 +220,5 @@
   </body>
 
   <!-- Core Javascript  -->
-  <script src="Assets/js/sellCoins.js"></script>
+  <script src="Assets/js/sellCards.js"></script>
 </html>
