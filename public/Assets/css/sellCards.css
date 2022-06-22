@@ -399,102 +399,6 @@ nav.close ~ .dashboard .top {
   color: var(--text-color);
 }
 
-@media (max-width: 1000px) {
-  nav {
-    width: 73px;
-  }
-  nav.close {
-    width: 250px;
-  }
-  nav .logo_name {
-    opacity: 0;
-    pointer-events: none;
-  }
-  nav.close .logo_name {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  nav li a .link-name {
-    opacity: 0;
-    pointer-events: none;
-  }
-  nav.close li a .link-name {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  nav ~ .dashboard {
-    left: 73px;
-    width: calc(100% - 73px);
-  }
-  nav.close ~ .dashboard {
-    left: 250px;
-    width: calc(100% - 250px);
-  }
-  nav ~ .dashboard .top {
-    left: 73px;
-    width: calc(100% - 73px);
-  }
-  nav.close ~ .dashboard .top {
-    left: 250px;
-    width: calc(100% - 250px);
-  }
-  .activity .activity-data {
-    overflow-x: scroll;
-  }
-}
-
-@media (max-width: 780px) {
-  .dash-content .boxes .box {
-    width: calc(100% / 2 - 15px);
-    margin-top: 15px;
-  }
-}
-@media (max-width: 560px) {
-  .dash-content .boxes .box {
-    width: 100%;
-  }
-}
-@media (max-width: 400px) {
-  nav {
-    width: 0px;
-  }
-  nav.close {
-    width: 73px;
-  }
-  nav .logo_name {
-    opacity: 0;
-    pointer-events: none;
-  }
-  nav.close .logo_name {
-    opacity: 0;
-    pointer-events: none;
-  }
-  nav li a .link-name {
-    opacity: 0;
-    pointer-events: none;
-  }
-  nav.close li a .link-name {
-    opacity: 0;
-    pointer-events: none;
-  }
-  nav ~ .dashboard {
-    left: 0;
-    width: 100%;
-  }
-  nav.close ~ .dashboard {
-    left: 73px;
-    width: calc(100% - 73px);
-  }
-  nav ~ .dashboard .top {
-    left: 0;
-    width: 100%;
-  }
-  nav.close ~ .dashboard .top {
-    left: 0;
-    width: 100%;
-  }
-}
-
 /* My Styles  */
 /* Box 1 */
 .boxes .box1 {
@@ -660,4 +564,117 @@ nav.close ~ .dashboard .top {
 .btn-other-coin {
   background-color: #000;
   color: #fff;
+}
+
+@media (max-width: 1000px) {
+  nav {
+    width: 73px;
+  }
+  nav.close {
+    width: 250px;
+  }
+  nav .logo_name {
+    opacity: 0;
+    pointer-events: none;
+  }
+  nav.close .logo_name {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  nav li a .link-name {
+    opacity: 0;
+    pointer-events: none;
+  }
+  nav.close li a .link-name {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  nav ~ .dashboard {
+    left: 73px;
+    width: calc(100% - 73px);
+  }
+  nav.close ~ .dashboard {
+    left: 250px;
+    width: calc(100% - 250px);
+  }
+  nav ~ .dashboard .top {
+    left: 73px;
+    width: calc(100% - 73px);
+  }
+  nav.close ~ .dashboard .top {
+    left: 250px;
+    width: calc(100% - 250px);
+  }
+  .activity .activity-data {
+    overflow-x: scroll;
+  }
+}
+
+@media (max-width: 780px) {
+  .boxes .box1 .box-info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 14px;
+  }
+
+  .dash-content .boxes .box {
+    width: calc(100% / 2 - 15px);
+    margin-top: 15px;
+  }
+}
+@media (max-width: 560px) {
+  .dash-content .boxes .box {
+    width: 100%;
+  }
+}
+@media (max-width: 400px) {
+  .boxes .box1 .box-info {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+  }
+  nav {
+    width: 0px;
+  }
+  nav.close {
+    width: 73px;
+  }
+  nav .logo_name {
+    opacity: 0;
+    pointer-events: none;
+  }
+  nav.close .logo_name {
+    opacity: 0;
+    pointer-events: none;
+  }
+  nav li a .link-name {
+    opacity: 0;
+    pointer-events: none;
+  }
+  nav.close li a .link-name {
+    opacity: 0;
+    pointer-events: none;
+  }
+  nav ~ .dashboard {
+    left: 0;
+    width: 100%;
+  }
+  nav.close ~ .dashboard {
+    left: 73px;
+    width: calc(100% - 73px);
+  }
+  nav ~ .dashboard .top {
+    left: 0;
+    width: 100%;
+  }
+  nav.close ~ .dashboard .top {
+    left: 0;
+    width: 100%;
+  }
 }

@@ -1,224 +1,326 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!----===== Iconscout CSS ===== -->
-    <link
-      rel="stylesheet"
-      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
-    />
-    <!-- =========================================================  -->
-    <link rel="icon" type="image/png" href="Assets/img/icons/favicon.ico" />
-    <!----======== CSS ======== -->
-    <link rel="stylesheet" href="Assets/css/sellCards.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Diamond Exchange - Dashboard</title>
-  </head>
-  <body>
-    <nav>
-      <div class="logo-name">
-        <div class="logo-image">
-          <img src="Assets/img/logo.png" alt="" />
-        </div>
-        <span class="logo_name">Diamond Exchange</span>
+  <!----===== Iconscout CSS ===== -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+  <!-- =========================================================  -->
+  <link rel="icon" type="image/png" href="Assets/img/icons/favicon.ico" />
+  <!----======== CSS ======== -->
+  <link rel="stylesheet" href="Assets/css/sellCards.css" />
+
+  <title>Diamond Exchange - Dashboard</title>
+</head>
+
+<body>
+  <nav>
+    <div class="logo-name">
+      <div class="logo-image">
+        <img src="Assets/img/logo.png" alt="" />
       </div>
+      <span class="logo_name">Diamond Exchange</span>
+    </div>
 
-      <div class="menu-items">
-        <ul class="nav-links">
-          <li>
-            <a href="/deem-home">
-              <i class="uil uil-estate"></i>
-              <span class="link-name">Dashboard</span>
-            </a>
-          </li>
-          <li>
-            <a href="/sell-coins">
-              <i class="uil uil-exchange"></i>
-              <span class="link-name">Sell Coins</span>
-            </a>
-          </li>
-          <li>
-            <a href="/sell-cards" class="active">
-              <i class="uil uil-card-atm"></i>
-              <span class="link-name">Sell Giftcards</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="uil uil-bell"></i>
-              <span class="link-name">Notifications</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="uil uil-wallet"></i>
-              <span class="link-name">Wallet</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="uil uil-user"></i>
-              <span class="link-name">My Account</span>
-            </a>
-          </li>
-        </ul>
+    <div class="menu-items">
+      <ul class="nav-links">
+        <li>
+          <a href="/deem-home">
+            <i class="uil uil-estate"></i>
+            <span class="link-name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="/sell-coins">
+            <i class="uil uil-exchange"></i>
+            <span class="link-name">Sell Coins</span>
+          </a>
+        </li>
+        <li>
+          <a href="/sell-cards" class="active">
+            <i class="uil uil-card-atm"></i>
+            <span class="link-name">Sell Giftcards</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="uil uil-bell"></i>
+            <span class="link-name">Notifications</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="uil uil-wallet"></i>
+            <span class="link-name">Wallet</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="uil uil-user"></i>
+            <span class="link-name">My Account</span>
+          </a>
+        </li>
+      </ul>
 
-        <ul class="logout-mode">
-          <li>
-            <a href="/logout">
-              <i class="uil uil-signout"></i>
-              <span class="link-name">Logout</span>
-            </a>
-          </li>
+      <ul class="logout-mode">
+        <li>
+          <a href="/logout">
+            <i class="uil uil-signout"></i>
+            <span class="link-name">Logout</span>
+          </a>
+        </li>
 
-          <li class="mode">
-            <a href="#">
-              <i class="uil uil-moon"></i>
-              <span class="link-name">Dark Mode</span>
-            </a>
+        <li class="mode">
+          <a href="#">
+            <i class="uil uil-moon"></i>
+            <span class="link-name">Dark Mode</span>
+          </a>
 
-            <div class="mode-toggle">
-              <span class="switch"></span>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <section class="dashboard">
-      <div class="top">
-        <i class="uil uil-bars sidebar-toggle"></i>
-        <span class="user-welcome">
-          <span> Hello, <%=user%> </span>
-          <img src="<%=imageURL%>" alt="" />
-        </span>
-      </div>
-
-      <div class="dash-content">
-        <div class="overview">
-          <div class="title">
-            <i class="uil uil-tachometer-fast-alt"></i>
-            <span class="text">Sell Giftcards</span>
+          <div class="mode-toggle">
+            <span class="switch"></span>
           </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-          <div class="boxes">
-            <!-- Bitcoin Box  -->
-            <div class="box box1">
-              <div class="sell-coin">
-                <img src="Assets/img//giftcards/amazon.png" alt="" />
-              </div>
-              <div class="box-info">
-                <div class="price text">570₦/$</div>
-                <a href="/sell-other-coins" class="btn btn-other-coin"
-                  >Sell Amazon</a
-                >
-              </div>
+  <section class="dashboard">
+    <div class="top">
+      <i class="uil uil-bars sidebar-toggle"></i>
+      <span class="user-welcome">
+        <span> Hello, <%=user%> </span>
+        <img src="<%=imageURL%>" alt="" />
+      </span>
+    </div>
+
+    <div class="dash-content">
+      <div class="overview">
+        <div class="title">
+          <i class="uil uil-tachometer-fast-alt"></i>
+          <span class="text">Sell Giftcards</span>
+        </div>
+
+        <div class="boxes">
+          <!-- Bitcoin Box  -->
+          <div class="box box1">
+            <div class="sell-coin">
+              <img src="Assets/img//giftcards/amazon.png" alt="" />
             </div>
-            <!-- Bitcoin Box  -->
-            <div class="box box1">
-              <div class="sell-coin">
-                <img src="Assets/img//giftcards/american.jpg" alt="" />
-              </div>
-              <div class="box-info">
-                <div class="price text">570₦/$</div>
-                <a href="/sell-other-coins" class="btn btn-other-coin"
-                  >Sell Amazon</a
-                >
-              </div>
-            </div>
-            <!-- Bitcoin Box  -->
-            <div class="box box1">
-              <div class="sell-coin">
-                <img src="Assets/img//giftcards/apple.png" alt="" />
-              </div>
-              <div class="box-info">
-                <div class="price text">570₦/$</div>
-                <a href="/sell-other-coins" class="btn btn-other-coin"
-                  >Sell Amazon</a
-                >
-              </div>
-            </div>
-            <!-- Bitcoin Box  -->
-            <div class="box box1">
-              <div class="sell-coin">
-                <img src="Assets/img//giftcards/cashapp.png" alt="" />
-              </div>
-              <div class="box-info">
-                <div class="price text">570₦/$</div>
-                <a href="/sell-other-coins" class="btn btn-other-coin"
-                  >Sell Amazon</a
-                >
-              </div>
-            </div>
-            <!-- Bitcoin Box  -->
-            <div class="box box1">
-              <div class="sell-coin">
-                <img src="Assets/img//giftcards/nike.png" alt="" />
-              </div>
-              <div class="box-info">
-                <div class="price text">570₦/$</div>
-                <a href="/sell-other-coins" class="btn btn-other-coin"
-                  >Sell Amazon</a
-                >
-              </div>
-            </div>
-            <!-- Bitcoin Box  -->
-            <div class="box box1">
-              <div class="sell-coin">
-                <img src="Assets/img//giftcards/itunes.jpg" alt="" />
-              </div>
-              <div class="box-info">
-                <div class="price text">570₦/$</div>
-                <a href="/sell-other-coins" class="btn btn-other-coin"
-                  >Sell Amazon</a
-                >
-              </div>
-            </div>
-            <!-- Bitcoin Box  -->
-            <div class="box box1">
-              <div class="sell-coin">
-                <img src="Assets/img//giftcards/google.jpg" alt="" />
-              </div>
-              <div class="box-info">
-                <div class="price text">570₦/$</div>
-                <a href="/sell-other-coins" class="btn btn-other-coin"
-                  >Sell Amazon</a
-                >
-              </div>
-            </div>
-            <!-- Bitcoin Box  -->
-            <div class="box box1">
-              <div class="sell-coin">
-                <img src="Assets/img//giftcards/footlocker.jpg" alt="" />
-              </div>
-              <div class="box-info">
-                <div class="price text">570₦/$</div>
-                <a href="/sell-other-coins" class="btn btn-other-coin"
-                  >Sell Amazon</a
-                >
-              </div>
-            </div>
-            <!-- Bitcoin Box  -->
-            <div class="box box1">
-              <div class="sell-coin">
-                <img src="Assets/img//giftcards/nordstrom.jpg" alt="" />
-              </div>
-              <div class="box-info">
-                <div class="price text">570₦/$</div>
-                <a href="/sell-other-coins" class="btn btn-other-coin"
-                  >Sell Amazon</a
-                >
-              </div>
+            <div class="box-info">
+              <div class="price text">570₦/$</div>
+              <a href="/sell-other-coins" class="btn btn-other-coin">Sell Amazon</a>
             </div>
           </div>
+          <!-- Bitcoin Box  -->
+          <div class="box box1">
+            <div class="sell-coin">
+              <img src="Assets/img//giftcards/american.jpg" alt="" />
+            </div>
+            <div class="box-info">
+              <div class="price text">570₦/$</div>
+              <a href="/sell-other-coins" class="btn btn-other-coin">Sell American card</a>
+            </div>
+          </div>
+          <!-- Bitcoin Box  -->
+          <div class="box box1">
+            <div class="sell-coin">
+              <img src="Assets/img//giftcards/apple.jpg" alt="" />
+            </div>
+            <div class="box-info">
+              <div class="price text">570₦/$</div>
+              <a href="/sell-other-coins" class="btn btn-other-coin">Sell Apple Card</a>
+            </div>
+          </div>
+          <!-- Bitcoin Box  -->
+          <div class="box box1">
+            <div class="sell-coin">
+              <img src="Assets/img//giftcards/cashapp.png" alt="" />
+            </div>
+            <div class="box-info">
+              <div class="price text">570₦/$</div>
+              <a href="/sell-other-coins" class="btn btn-other-coin">Sell Cashapp Card</a>
+            </div>
+          </div>
+          <!-- Bitcoin Box  -->
+          <div class="box box1">
+            <div class="sell-coin">
+              <img src="Assets/img//giftcards/nike.png" alt="" />
+            </div>
+            <div class="box-info">
+              <div class="price text">570₦/$</div>
+              <a href="/sell-other-coins" class="btn btn-other-coin">Sell Nike</a>
+            </div>
+          </div>
+          <!-- Bitcoin Box  -->
+          <div class="box box1">
+            <div class="sell-coin">
+              <img src="Assets/img//giftcards/itunes.jpg" alt="" />
+            </div>
+            <div class="box-info">
+              <div class="price text">570₦/$</div>
+              <a href="/sell-other-coins" class="btn btn-other-coin">Sell Itunes</a>
+            </div>
+          </div>
+          <!-- Bitcoin Box  -->
+          <div class="box box1">
+            <div class="sell-coin">
+              <img src="Assets/img//giftcards/google.jpg" alt="" />
+            </div>
+            <div class="box-info">
+              <div class="price text">570₦/$</div>
+              <a href="/sell-other-coins" class="btn btn-other-coin">Sell Google Play</a>
+            </div>
+          </div>
+          <!-- Bitcoin Box  -->
+          <div class="box box1">
+            <div class="sell-coin">
+              <img src="Assets/img//giftcards/footlocker.jpg" alt="" />
+            </div>
+            <div class="box-info">
+              <div class="price text">570₦/$</div>
+              <a href="/sell-other-coins" class="btn btn-other-coin">Sell Footlocker</a>
+            </div>
+          </div>
+          <!-- Bitcoin Box  -->
+          <div class="box box1">
+            <div class="sell-coin">
+              <img src="Assets/img//giftcards/nordstrom.jpg" alt="" />
+            </div>
+            <div class="box-info">
+              <div class="price text">570₦/$</div>
+              <a href="/sell-other-coins" class="btn btn-other-coin">Sell Nordstrom</a>
+            </div>
+          </div>
+          <!-- Bitcoin Box  -->
+          <div class="box box1">
+            <div class="sell-coin">
+              <img src="Assets/img//giftcards/busd.jpeg" alt="" />
+            </div>
+            <div class="box-info">
+              <div class="price text">570₦/$</div>
+              <a href="/sell-other-coins" class="btn btn-other-coin">Sell BUSD</a>
+            </div>
+          </div>
+          <!-- Bitcoin Box  -->
+          <div class="box box1">
+            <div class="sell-coin">
+              <img src="Assets/img//giftcards/ebay.jpg" alt="" />
+            </div>
+            <div class="box-info">
+              <div class="price text">570₦/$</div>
+              <a href="/sell-other-coins" class="btn btn-other-coin">Sell E-bay Card</a>
+            </div>
+          </div>
+          <!-- Bitcoin Box  -->
+          <div class="box box1">
+            <div class="sell-coin">
+              <img src="Assets/img//giftcards/steam.jpg" alt="" />
+            </div>
+            <div class="box-info">
+              <div class="price text">570₦/$</div>
+              <a href="/sell-other-coins" class="btn btn-other-coin">Sell Steam Card</a>
+            </div>
+          </div>
+          <!-- Bitcoin Box  -->
+          <div class="box box1">
+            <div class="sell-coin">
+              <img src="Assets/img//giftcards/moneylion.jpg" alt="" />
+            </div>
+            <div class="box-info">
+              <div class="price text">570₦/$</div>
+              <a href="/sell-other-coins" class="btn btn-other-coin">Sell Moneylion</a>
+            </div>
+          </div>
+          <!-- Bitcoin Box  -->
+          <div class="box box1">
+            <div class="sell-coin">
+              <img src="Assets/img//giftcards/visa.png" alt="" />
+            </div>
+            <div class="box-info">
+              <div class="price text">570₦/$</div>
+              <a href="/sell-other-coins" class="btn btn-other-coin">Sell Visa</a>
+            </div>
+          </div>
+          <!-- Bitcoin Box  -->
+          <div class="box box1">
+            <div class="sell-coin">
+              <img src="Assets/img//giftcards/XRP.png" alt="" />
+            </div>
+            <div class="box-info">
+              <div class="price text">570₦/$</div>
+              <a href="/sell-other-coins" class="btn btn-other-coin">Sell XRP</a>
+            </div>
+          </div>
+          <!-- Bitcoin Box  -->
+          <div class="box box1">
+            <div class="sell-coin">
+              <img src="Assets/img//giftcards/walmart.png" alt="" />
+            </div>
+            <div class="box-info">
+              <div class="price text">570₦/$</div>
+              <a href="/sell-other-coins" class="btn btn-other-coin">Sell Walmart Card</a>
+            </div>
+          </div>
+          <!-- Bitcoin Box  -->
+          <div class="box box1">
+            <div class="sell-coin">
+              <img src="Assets/img//giftcards/razergold.jpg" alt="" />
+            </div>
+            <div class="box-info">
+              <div class="price text">570₦/$</div>
+              <a href="/sell-other-coins" class="btn btn-other-coin">Sell Razergold</a>
+            </div>
+          </div>
+          <!-- Bitcoin Box  -->
+          <div class="box box1">
+            <div class="sell-coin">
+              <img src="Assets/img//giftcards/sephora.png" alt="" />
+            </div>
+            <div class="box-info">
+              <div class="price text">570₦/$</div>
+              <a href="/sell-other-coins" class="btn btn-other-coin">Sell Sephora</a>
+            </div>
+          </div>
+          <!-- Bitcoin Box  -->
+          <div class="box box1">
+            <div class="sell-coin">
+              <img src="Assets/img//giftcards/solana.jpg" alt="" />
+            </div>
+            <div class="box-info">
+              <div class="price text">570₦/$</div>
+              <a href="/sell-other-coins" class="btn btn-other-coin">Sell Solana Card</a>
+            </div>
+          </div>
+          <!-- Bitcoin Box  -->
+          <div class="box box1">
+            <div class="sell-coin">
+              <img src="Assets/img//giftcards/target.png" alt="" />
+            </div>
+            <div class="box-info">
+              <div class="price text">570₦/$</div>
+              <a href="/sell-other-coins" class="btn btn-other-coin">Sell Target Card</a>
+            </div>
+          </div>
+          <!-- Bitcoin Box  -->
+          <div class="box box1">
+            <div class="sell-coin">
+              <img src="Assets/img//giftcards/vanilla.jpg" alt="" />
+            </div>
+            <div class="box-info">
+              <div class="price text">570₦/$</div>
+              <a href="/sell-other-coins" class="btn btn-other-coin">Sell Vanilla Card</a>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-  </body>
+    </div>
+  </section>
+</body>
 
-  <!-- Core Javascript  -->
-  <script src="Assets/js/sellCards.js"></script>
+<!-- Core Javascript  -->
+<script src="Assets/js/sellCards.js"></script>
+
 </html>

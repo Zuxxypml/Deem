@@ -28,7 +28,12 @@ function handleRequest(param, req, res) {
             ETH = d.ethereum.usd,
             USDC = d["usd-coin"].usd,
             BCH = d["bitcoin-cash"].usd,
-            DOGE = d.dogecoin.usd;
+            DOGE = d.dogecoin.usd,
+            LTC = d.litecoin.usd,
+            BNB = d.binancecoin.usd,
+            RPE = d.ripple.usd,
+            TTH = d.tether.usd,
+            TRON = d.tron.usd;
 
           res.render("sell-coins", {
             btcvalue: BTC,
@@ -36,6 +41,11 @@ function handleRequest(param, req, res) {
             bchvalue: BCH,
             usdcvalue: USDC,
             dogevalue: DOGE,
+            ltcvalue: LTC,
+            bnbvalue: BNB,
+            ripplevalue: RPE,
+            tethervalue: TTH,
+            tronvalue: TRON,
             user: foundUser.name,
             imageURL: foundUser.imageURL,
           });
