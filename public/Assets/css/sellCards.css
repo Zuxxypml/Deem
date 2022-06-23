@@ -32,7 +32,7 @@
   display: inline-block;
   font-weight: normal;
   text-align: center;
-  white-space: nowrap;
+  white-space: wrap;
   vertical-align: middle;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -406,6 +406,7 @@ nav.close ~ .dashboard .top {
   flex-direction: column;
   align-items: flex-start;
   background-color: #000;
+  gap: 8px;
 }
 .boxes .box1 .sell-coin {
   display: flex;
@@ -422,7 +423,7 @@ nav.close ~ .dashboard .top {
   width: 100%;
   align-items: center;
   justify-content: space-between;
-  gap: 40px;
+  flex-wrap: wrap;
 }
 .boxes .box1 .rate {
   display: flex;
@@ -613,10 +614,10 @@ nav.close ~ .dashboard .top {
 @media (max-width: 780px) {
   .boxes .box1 .box-info {
     display: flex;
-    flex-direction: column;
     width: 100%;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
     gap: 14px;
   }
 
@@ -637,7 +638,6 @@ nav.close ~ .dashboard .top {
     width: 100%;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
   }
   nav {
     width: 0px;
