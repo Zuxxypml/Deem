@@ -1,219 +1,270 @@
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!----===== Iconscout CSS ===== -->
-    <link
-      rel="stylesheet"
-      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
-    />
-    <!-- =========================================================  -->
-    <link rel="icon" type="image/png" href="Assets/img/icons/favicon.ico" />
-    <!----======== CSS ======== -->
-    <link rel="stylesheet" href="Assets/css/sellCoins.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Diamond Exchange - Dashboard</title>
-  </head>
-  <body>
-    <nav>
-      <div class="logo-name">
-        <div class="logo-image">
-          <img src="Assets/img/logo.png" alt="" />
-        </div>
-        <span class="logo_name">Diamond Exchange</span>
+  <!----===== Iconscout CSS ===== -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+  <!-- =========================================================  -->
+  <link rel="icon" type="image/png" href="Assets/img/icons/favicon.ico" />
+  <!----======== CSS ======== -->
+  <link rel="stylesheet" href="Assets/css/sellCoins.css" />
+
+  <title>Diamond Exchange - Dashboard</title>
+</head>
+
+<body>
+  <nav>
+    <div class="logo-name">
+      <div class="logo-image">
+        <img src="Assets/img/logo.png" alt="" />
       </div>
+      <span class="logo_name">Diamond Exchange</span>
+    </div>
 
-      <div class="menu-items">
-        <ul class="nav-links">
-          <li>
-            <a href="/deem-home">
-              <i class="uil uil-estate"></i>
-              <span class="link-name">Dashboard</span>
-            </a>
-          </li>
-          <li>
-            <a href="/sell-coins" class="active">
-              <i class="uil uil-exchange"></i>
-              <span class="link-name">Sell Coins</span>
-            </a>
-          </li>
-          <li>
-            <a href="/sell-cards">
-              <i class="uil uil-card-atm"></i>
-              <span class="link-name">Sell Giftcards</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="uil uil-bell"></i>
-              <span class="link-name">Notifications</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="uil uil-wallet"></i>
-              <span class="link-name">Wallet</span>
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="uil uil-user"></i>
-              <span class="link-name">My Account</span>
-            </a>
-          </li>
-        </ul>
+    <div class="menu-items">
+      <ul class="nav-links">
+        <li>
+          <a href="/deem-home">
+            <i class="uil uil-estate"></i>
+            <span class="link-name">Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="/sell-coins" class="active">
+            <i class="uil uil-exchange"></i>
+            <span class="link-name">Sell Coins</span>
+          </a>
+        </li>
+        <li>
+          <a href="/sell-cards">
+            <i class="uil uil-card-atm"></i>
+            <span class="link-name">Sell Giftcards</span>
+          </a>
+        </li>
+        <li>
+          <a href="/notifications">
+            <i class="uil uil-bell"></i>
+            <span class="link-name">Notifications</span>
+          </a>
+        </li>
+        <li>
+          <a href="/wallet">
+            <i class="uil uil-wallet"></i>
+            <span class="link-name">Wallet</span>
+          </a>
+        </li>
+        <li>
+          <a href="/account">
+            <i class="uil uil-user"></i>
+            <span class="link-name">My Account</span>
+          </a>
+        </li>
+      </ul>
 
-        <ul class="logout-mode">
-          <li>
-            <a href="/logout">
-              <i class="uil uil-signout"></i>
-              <span class="link-name">Logout</span>
-            </a>
-          </li>
+      <ul class="logout-mode">
+        <li>
+          <a href="/logout">
+            <i class="uil uil-signout"></i>
+            <span class="link-name">Logout</span>
+          </a>
+        </li>
 
-          <li class="mode">
-            <a href="#">
-              <i class="uil uil-moon"></i>
-              <span class="link-name">Dark Mode</span>
-            </a>
+        <li class="mode">
+          <a href="#">
+            <i class="uil uil-moon"></i>
+            <span class="link-name">Dark Mode</span>
+          </a>
 
-            <div class="mode-toggle">
-              <span class="switch"></span>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <section class="dashboard">
-      <div class="top">
-        <i class="uil uil-bars sidebar-toggle"></i>
-        <span class="user-welcome">
-          <span> Hello, <%=user%> </span>
-          <img src="<%=imageURL%>" alt="" />
-        </span>
-      </div>
-
-      <div class="dash-content">
-        <div class="overview">
-          <div class="title">
-            <i class="uil uil-tachometer-fast-alt"></i>
-            <span class="text">Sell Coins</span>
+          <div class="mode-toggle">
+            <span class="switch"></span>
           </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-          <div class="boxes">
-            <!-- Bitcoin Box  -->
-            <div class="box box1">
-              <div class="sell-coin">
-                <img src="Assets/img/btc.svg" alt="" />
-                <div class="text">
-                  <a href="/sell-btc" class="btn btn-btc">Sell Bitcoin</a>
-                </div>
-              </div>
-              <div class="rate">
-                <span class="text">Rate:</span>
-                <div class="price text">570₦/$</div>
-              </div>
-              <div class="rate">
-                <div class="live-value text">Live Value:</div>
-                <div class="value text">$<%=btcvalue%></div>
-              </div>
-            </div>
-            <!-- Ethereum Box  -->
-            <div class="box box2">
-              <div class="sell-coin">
-                <img src="Assets/img/eth.svg" alt="" />
-                <div class="text">
-                  <a href="/sell-eth" class="btn btn-eth">Sell Ethereum</a>
-                </div>
-              </div>
-              <div class="rate">
-                <span class="text">Rate:</span>
-                <div class="price text">570₦/$</div>
-              </div>
-              <div class="rate">
-                <div class="live-value text">Live Value:</div>
-                <div class="value text">$<%=ethvalue%></div>
+  <section class="dashboard">
+    <div class="top">
+      <i class="uil uil-bars sidebar-toggle"></i>
+      <span class="user-welcome">
+        <span> Hello, <%=user%> </span>
+        <img src="<%=imageURL%>" alt="" />
+      </span>
+    </div>
+
+    <div class="dash-content">
+      <div class="overview">
+        <div class="title">
+          <i class="uil uil-tachometer-fast-alt"></i>
+          <span class="text">Sell Coins</span>
+        </div>
+
+        <div class="boxes">
+          <!-- Bitcoin Box  -->
+          <div class="box box1">
+            <div class="sell-coin">
+              <img src="Assets/img/btc.svg" alt="" />
+              <div class="text">
+                <a href="/sell-btc" class="btn btn-btc">Sell Bitcoin</a>
               </div>
             </div>
-            <!-- BCH  -->
-            <div class="box box3">
-              <div class="sell-coin">
-                <img src="Assets/img/bch.svg" alt="" />
-                <div class="text">
-                  <a href="/sell-bch" class="btn btn-bch">Sell BCH</a>
-                </div>
-              </div>
-              <div class="rate">
-                <span class="text">Rate:</span>
-                <div class="price text">570₦/$</div>
-              </div>
-              <div class="rate">
-                <div class="live-value text">Live Value:</div>
-                <div class="value text">$<%=bchvalue%></div>
-              </div>
+            <div class="rate">
+              <span class="text">Rate:</span>
+              <div class="price text">570₦/$</div>
             </div>
-            <!-- USDT  -->
-            <div class="box box2">
-              <div class="sell-coin">
-                <img src="Assets/img/usdc.svg" alt="" />
-                <div class="text">
-                  <a href="/sell-usdc" class="btn btn-usdc">Sell USDC</a>
-                </div>
-              </div>
-              <div class="rate">
-                <span class="text">Rate:</span>
-                <div class="price text">570₦/$</div>
-              </div>
-              <div class="rate">
-                <div class="live-value text">Live Value:</div>
-                <div class="value text">$<%=usdcvalue%></div>
-              </div>
-            </div>
-            <!-- USDT  -->
-            <div class="box box4">
-              <div class="sell-coin">
-                <img src="Assets/img/doge.svg" alt="" />
-                <div class="text">
-                  <a href="/sell-doge" class="btn btn-doge">Sell DOGE</a>
-                </div>
-              </div>
-              <div class="rate">
-                <span class="text">Rate:</span>
-                <div class="price text">570₦/$</div>
-              </div>
-              <div class="rate">
-                <div class="live-value text">Live Value:</div>
-                <div class="value text">$<%=dogevalue%></div>
-              </div>
-            </div>
-            <!-- Other Coins  -->
-            <div class="box box5">
-              <div class="sell-coin">
-                <img src="Assets/img/othercoins.png" alt="" />
-                <div class="text">
-                  <a href="/sell-other-coins" class="btn btn-other-coin"
-                    >Sell Other Coins</a
-                  >
-                </div>
-              </div>
-              <div class="rate">
-                <span class="text">Rate:</span>
-                <div class="price text">570₦/$</div>
-              </div>
-              <div class="rate">
-                <div class="live-value text">Live Value:</div>
-                <div class="value text">$<%=dogevalue%></div>
-              </div>
+            <div class="rate">
+              <div class="live-value text">Live Value:</div>
+              <div class="value text">$<%=btcvalue%></div>
             </div>
           </div>
+          <!-- Ethereum Box  -->
+          <div class="box box2">
+            <div class="sell-coin">
+              <img src="Assets/img/eth.svg" alt="" />
+              <div class="text">
+                <a href="/sell-eth" class="btn btn-eth">Sell Ethereum</a>
+              </div>
+            </div>
+            <div class="rate">
+              <span class="text">Rate:</span>
+              <div class="price text">570₦/$</div>
+            </div>
+            <div class="rate">
+              <div class="live-value text">Live Value:</div>
+              <div class="value text">$<%=ethvalue%></div>
+            </div>
+          </div>
+          <!-- BCH  -->
+          <div class="box box3">
+            <div class="sell-coin">
+              <img src="Assets/img/bch.svg" alt="" />
+              <div class="text">
+                <a href="/sell-bch" class="btn btn-bch">Sell BCH</a>
+              </div>
+            </div>
+            <div class="rate">
+              <span class="text">Rate:</span>
+              <div class="price text">570₦/$</div>
+            </div>
+            <div class="rate">
+              <div class="live-value text">Live Value:</div>
+              <div class="value text">$<%=bchvalue%></div>
+            </div>
+          </div>
+          <!-- USDT  -->
+          <div class="box box2">
+            <div class="sell-coin">
+              <img src="Assets/img/usdc.svg" alt="" />
+              <div class="text">
+                <a href="/sell-usdc" class="btn btn-usdc">Sell USDC</a>
+              </div>
+            </div>
+            <div class="rate">
+              <span class="text">Rate:</span>
+              <div class="price text">570₦/$</div>
+            </div>
+            <div class="rate">
+              <div class="live-value text">Live Value:</div>
+              <div class="value text">$<%=usdcvalue%></div>
+            </div>
+          </div>
+          <!-- DOGE  -->
+          <div class="box box4">
+            <div class="sell-coin">
+              <img src="Assets/img/doge.svg" alt="" />
+              <div class="text">
+                <a href="/sell-doge" class="btn btn-doge">Sell DOGE</a>
+              </div>
+            </div>
+            <div class="rate">
+              <span class="text">Rate:</span>
+              <div class="price text">570₦/$</div>
+            </div>
+            <div class="rate">
+              <div class="live-value text">Live Value:</div>
+              <div class="value text">$<%=dogevalue%></div>
+            </div>
+          </div>
+          <!-- LTC  -->
+          <div class="box ltc-box">
+            <div class="sell-coin">
+              <img src="Assets/img/ltc.svg" alt="" />
+              <div class="text">
+                <a href="/sell-ltc" class="btn btn-ltc">Sell LTC</a>
+              </div>
+            </div>
+            <div class="rate">
+              <span class="text">Rate:</span>
+              <div class="price text">570₦/$</div>
+            </div>
+            <div class="rate">
+              <div class="live-value text">Live Value:</div>
+              <div class="value text">$<%=ltcvalue%></div>
+            </div>
+          </div>
+          <!-- BNB  -->
+          <div class="box bnb-box">
+            <div class="sell-coin">
+              <img src="Assets/img/bnb.svg" alt="" />
+              <div class="text">
+                <a href="/sell-bnb" class="btn btn-bnb">Sell BNB</a>
+              </div>
+            </div>
+            <div class="rate">
+              <span class="text">Rate:</span>
+              <div class="price text">570₦/$</div>
+            </div>
+            <div class="rate">
+              <div class="live-value text">Live Value:</div>
+              <div class="value text">$<%=bnbvalue%></div>
+            </div>
+          </div>
+          <!-- Ripple  -->
+          <div class="box ripple-box">
+            <div class="sell-coin">
+              <img src="Assets/img/ripple.svg" alt="" />
+              <div class="text">
+                <a href="/sell-ripple" class="btn btn-ripple">Sell Ripple</a>
+              </div>
+            </div>
+            <div class="rate">
+              <span class="text">Rate:</span>
+              <div class="price text">570₦/$</div>
+            </div>
+            <div class="rate">
+              <div class="live-value text">Live Value:</div>
+              <div class="value text">$<%=ripplevalue%></div>
+            </div>
+          </div>
+          <!-- Tether  -->
+          <div class="box tether-box">
+            <div class="sell-coin">
+              <img src="Assets/img/tether.svg" alt="" />
+              <div class="text">
+                <a href="/sell-tether" class="btn btn-tether">Sell tether</a>
+              </div>
+            </div>
+            <div class="rate">
+              <span class="text">Rate:</span>
+              <div class="price text">570₦/$</div>
+            </div>
+            <div class="rate">
+              <div class="live-value text">Live Value:</div>
+              <div class="value text">$<%=tethervalue%></div>
+            </div>
+          </div>
+          <!-- End  -->
         </div>
+        <!-- Div End  -->
       </div>
-    </section>
-  </body>
+    </div>
+  </section>
+</body>
 
-  <!-- Core Javascript  -->
-  <script src="Assets/js/sellCoins.js"></script>
+<!-- Core Javascript  -->
+<script src="Assets/js/sellCoins.js"></script>
+
 </html>

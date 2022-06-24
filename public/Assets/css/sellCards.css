@@ -631,7 +631,7 @@ nav.close ~ .dashboard .top {
     width: 100%;
   }
 }
-@media (max-width: 400px) {
+@media (max-width: 467px) {
   .boxes .box1 .box-info {
     display: flex;
     flex-direction: row;
