@@ -23,6 +23,7 @@
   --bnb-box-color: #f5da96;
   --ripple-box-color: #87dbfa;
   --tether-box-color: #8dd8c4;
+  --tron-box-color: #e66d81;
   --title-icon-color: #fff;
 
   /* ====== Transition ====== */
@@ -73,6 +74,7 @@ body.dark {
   --ltc-box-color: #3a3b3c;
   --bnb-box-color: #3a3b3c;
   --tether-box-color: #3a3b3c;
+  --tron-box-color: #3a3b3c;
   --ripple-box-color: #3a3b3c;
 
   --title-icon-color: #ccc;
@@ -595,6 +597,32 @@ nav.close ~ .dashboard .top {
   align-items: center;
   justify-content: space-between;
 }
+
+/* box Tron  */
+.boxes .box.tron-box {
+  background-color: var(--tron-box-color);
+}
+.boxes .tron-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.boxes .tron-box .sell-coin {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+.boxes .tron-box .sell-coin img {
+  width: 20%;
+}
+.boxes .tron-box .rate {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+}
 /* Buttons  */
 .btn-btc {
   background-color: #f7931a;
@@ -668,6 +696,15 @@ nav.close ~ .dashboard .top {
   background-color: #8dd8c4;
   color: #fff;
 }
+.btn-tron {
+  background-color: rgb(239, 0, 39);
+  color: #fff;
+}
+.btn-tron:hover {
+  background-color: rgb(247, 77, 106);
+  color: #fff;
+}
+/* Media Queries  */
 @media (max-width: 1000px) {
   nav {
     width: 73px;

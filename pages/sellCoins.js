@@ -54,4 +54,4 @@ function handleRequest(param, req, res) {
     } else return;
   });
 }
-// btc eth bch usdc doge ltc ripple
+// btc eth bch usdc doge ltc ripple tether
